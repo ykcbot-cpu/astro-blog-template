@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import recommendations from '../data/recommendations.json';
+import shortlist from '../data/shortlist.json';
+
+const title = 'Recommendations';
+const description = 'Current KumoTrade recommendations and ranked shortlist.';
+const permalink = `${Astro.site.href}recommendations`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="recommendations">
+  <div class="container dashboard">
+    <header class="page-header">
+      <p class="eyebrow">As of {recommendations.asOf}</p>
+      <h1>Recommendations</h1>
+      <p class="summary">{recommendations.summary}</p>
+    </header>
+
+    <section class="table-wrap" aria-label="Current shortlist">
+      <h2>Shortlist</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Score</th>
+            <th>Thesis</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shortlist.items.map((item) => (
+            <tr>
+              <td>{item.rank}</td>
+              <td><strong>{item.name}</strong></td>
+              <td>{item.type}</td>
+              <td>{item.score}</td>
+              <td>{item.thesisStatus}</td>
+              <td>{item.action}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-wrap" aria-label="Active recommendations">
+      <h2>Active Recommendations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Recommendation</th>
+            <th>Trigger</th>
+            <th>Stop</th>
+            <th>Target</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recommendations.active.map((item) => (
+            <tr>
+              <td><strong>{item.ticker}</strong></td>
+              <td>{item.recommendation}</td>
+              <td>{item.trigger}</td>
+              <td>{item.stop}</td>
+              <td>{item.target}</td>
+              <td>{item.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-wrap" aria-label="Completed or removed recommendations">
+      <h2>Completed / Removed</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Outcome</th>
+            <th>Follow-up</th>
+          </tr>
+        </thead>
+        <tbody>
+          {recommendations.completedOrRemoved.map((item) => (
+            <tr>
+              <td><strong>{item.ticker}</strong></td>
+              <td>{item.outcome}</td>
+              <td>{item.followUp}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .dashboard {
+    max-width: 78em;
+  }
+
+  .page-header {
+    margin: 2rem 0;
+  }
+
+  .eyebrow,
+  .summary {
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .summary {
+    max-width: 60rem;
+    text-transform: none;
+  }
+
+  .table-wrap {
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 860px;
+    width: 100%;
+  }
+</style>

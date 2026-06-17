@@ -1,0 +1,73 @@
+{
+  "asOf": "2026-06-17 08:50 SGT",
+  "summary": "No new full-size orders before FOMC clarity. Keep current book, let GE/JPM work, hold XLE hedge, and do not add semis while QQQ remains below 740.",
+  "active": [
+    {
+      "ticker": "AMZN",
+      "recommendation": "Watch / conditional long",
+      "trigger": "Buy only on 242-244 hold or reclaim above 248.5",
+      "stop": "236",
+      "target": "265",
+      "status": "Still pending",
+      "followUp": "Do not chase."
+    },
+    {
+      "ticker": "GOOGL",
+      "recommendation": "Watch / conditional long",
+      "trigger": "Conditional only if it holds 373 and QQQ stabilizes",
+      "stop": "356",
+      "target": "390",
+      "status": "Upgraded watch",
+      "followUp": "Still requires QQQ stabilization before action."
+    },
+    {
+      "ticker": "XLI",
+      "recommendation": "Watch only",
+      "trigger": "No chase; wait for pullback / better risk-reward",
+      "stop": "TBD",
+      "target": "TBD",
+      "status": "Still pending",
+      "followUp": "Industrial theme intact but extended."
+    },
+    {
+      "ticker": "CAT",
+      "recommendation": "Watch only",
+      "trigger": "No chase; wait for pullback / better risk-reward",
+      "stop": "TBD",
+      "target": "TBD",
+      "status": "Still pending",
+      "followUp": "Industrial theme intact but extended."
+    },
+    {
+      "ticker": "LLY",
+      "recommendation": "Watch only",
+      "trigger": "Reconsider only if it reclaims and holds 1135-1137",
+      "stop": "TBD",
+      "target": "TBD",
+      "status": "Still downgraded",
+      "followUp": "No entry while below reclaim zone."
+    }
+  ],
+  "completedOrRemoved": [
+    {
+      "ticker": "NVDA",
+      "outcome": "Triggered and executed: 147 shares at 211.08 on 2026-06-15 23:30 SGT",
+      "followUp": "Hold; no further add unless pullback/rebase."
+    },
+    {
+      "ticker": "QQQ",
+      "outcome": "Closed at 740.95 on 2026-06-15 21:47 SGT",
+      "followUp": "Removed; do not reopen without fresh breakdown."
+    },
+    {
+      "ticker": "AVGO",
+      "outcome": "Downgraded/removed after preferred setup failed and traded near stop zone",
+      "followUp": "Remove until reclaim/rebuild."
+    },
+    {
+      "ticker": "TSLA",
+      "outcome": "Old short invalidated",
+      "followUp": "No action unless new setup forms or price breaks below 380."
+    }
+  ]
+}

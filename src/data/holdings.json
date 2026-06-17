@@ -1,0 +1,95 @@
+{
+  "asOf": "2026-06-17 08:50 SGT",
+  "regime": "Neutral / selective rotation",
+  "exposure": {
+    "longNotionalUsd": 242600,
+    "shortNotionalUsd": 34000,
+    "grossExposurePct": 27.7,
+    "netExposurePct": 20.9,
+    "recommendedNetExposurePct": "20-25"
+  },
+  "positions": [
+    {
+      "ticker": "GE",
+      "name": "General Electric",
+      "direction": "Long",
+      "quantity": 150,
+      "entryPrice": 335.6,
+      "lastPriceUsed": 351.73,
+      "stop": 314,
+      "target": 365,
+      "score": "9/10",
+      "status": "Active",
+      "thesis": "Intact",
+      "action": "Hold; consider trim near 360-365."
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase",
+      "direction": "Long",
+      "quantity": 160,
+      "entryPrice": 313.41,
+      "lastPriceUsed": 331.14,
+      "stop": 298,
+      "target": 340,
+      "score": "9/10",
+      "status": "Active",
+      "thesis": "Intact / working",
+      "action": "Hold; no chase add before FOMC."
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA",
+      "direction": "Long",
+      "quantity": 440,
+      "entryPrice": 206.63,
+      "lastPriceUsed": 207.41,
+      "stop": 191,
+      "target": 230,
+      "score": "5/10",
+      "status": "Active",
+      "thesis": "Yellow due QQQ and semi weakness",
+      "action": "Hold; no add unless NVDA reclaims 211.5-212.5 and QQQ reclaims 740."
+    },
+    {
+      "ticker": "SMH",
+      "name": "VanEck Semiconductor ETF",
+      "direction": "Long",
+      "quantity": 74,
+      "entryPrice": 605.6,
+      "lastPriceUsed": 616,
+      "stop": 565,
+      "target": 675,
+      "score": "5/10",
+      "status": "Active",
+      "thesis": "Yellow due semi weakness",
+      "action": "Hold; no add; watch 605/600."
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energy Select Sector SPDR Fund",
+      "direction": "Short hedge",
+      "quantity": 614,
+      "entryPrice": 57.09,
+      "lastPriceUsed": 55.36,
+      "stop": 61,
+      "target": 52.5,
+      "score": "8/10",
+      "status": "Active",
+      "thesis": "Intact hedge",
+      "action": "Hold short hedge; tighten if XLE reclaims 57.5-58."
+    }
+  ],
+  "recentlyClosed": [
+    {
+      "ticker": "QQQ",
+      "direction": "Short hedge",
+      "quantity": 83,
+      "entryPrice": 718.19,
+      "exitPrice": 740.95,
+      "exitDate": "2026-06-15 21:47 SGT",
+      "realizedPnlUsd": -1895.52,
+      "reason": "Stop breach / hedge thesis invalidated by tech strength."
+    }
+  ]
+}

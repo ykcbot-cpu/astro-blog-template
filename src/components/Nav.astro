@@ -8,6 +8,7 @@ const { current = '' } = Astro.props;
     align-items: center;
     display: flex;
     flex: 1;
+    flex-wrap: wrap;
     font-family: var(--font-family-sans);
     font-weight: 700;
     justify-content: flex-end;
@@ -20,8 +21,8 @@ const { current = '' } = Astro.props;
     padding: 10px 5px;
     display: block;
     position: relative;
-    margin-left: 20px;
-    min-width: 70px;
+    margin-left: 14px;
+    min-width: 54px;
     text-align: center;
   }
 
@@ -66,6 +67,8 @@ const { current = '' } = Astro.props;
   <a class={current === "" ? "selected" : ""} href='/'>home</a>
   <a class={current === "about" ? "selected" : ""} href='/about'>about</a>
   <a class={current === "blog" ? "selected" : ""} href='/blog'>blog</a>
+  <a class={current === "holdings" ? "selected" : ""} href='/holdings'>holdings</a>
+  <a class={current === "recommendations" ? "selected" : ""} href='/recommendations'>recs</a>
   <div class="theme-toggle-container">
     <ThemeToggleButton client:load />
   </div>
