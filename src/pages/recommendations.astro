@@ -21,23 +21,23 @@ const permalink = `${Astro.site.href}recommendations`;
       <table>
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Score</th>
-            <th>Thesis</th>
-            <th>Action</th>
+            <th class="numeric">Rank</th>
+            <th class="compact">Name</th>
+            <th class="compact">Type</th>
+            <th class="compact">Score</th>
+            <th class="long">Thesis</th>
+            <th class="long">Action</th>
           </tr>
         </thead>
         <tbody>
           {shortlist.items.map((item) => (
             <tr>
-              <td>{item.rank}</td>
-              <td><strong>{item.name}</strong></td>
-              <td>{item.type}</td>
-              <td>{item.score}</td>
-              <td>{item.thesisStatus}</td>
-              <td>{item.action}</td>
+              <td class="numeric">{item.rank}</td>
+              <td class="compact"><strong>{item.name}</strong></td>
+              <td class="compact">{item.type}</td>
+              <td class="compact">{item.score}</td>
+              <td class="long">{item.thesisStatus}</td>
+              <td class="long">{item.action}</td>
             </tr>
           ))}
         </tbody>
@@ -49,23 +49,23 @@ const permalink = `${Astro.site.href}recommendations`;
       <table>
         <thead>
           <tr>
-            <th>Ticker</th>
-            <th>Recommendation</th>
-            <th>Trigger</th>
-            <th>Stop</th>
-            <th>Target</th>
-            <th>Status</th>
+            <th class="compact">Ticker</th>
+            <th class="compact">Recommendation</th>
+            <th class="long">Trigger</th>
+            <th class="compact">Stop</th>
+            <th class="compact">Target</th>
+            <th class="long">Status</th>
           </tr>
         </thead>
         <tbody>
           {recommendations.active.map((item) => (
             <tr>
-              <td><strong>{item.ticker}</strong></td>
-              <td>{item.recommendation}</td>
-              <td>{item.trigger}</td>
-              <td>{item.stop}</td>
-              <td>{item.target}</td>
-              <td>{item.status}</td>
+              <td class="compact"><strong>{item.ticker}</strong></td>
+              <td class="compact">{item.recommendation}</td>
+              <td class="long">{item.trigger}</td>
+              <td class="compact">{item.stop}</td>
+              <td class="compact">{item.target}</td>
+              <td class="long">{item.status}</td>
             </tr>
           ))}
         </tbody>
@@ -77,17 +77,17 @@ const permalink = `${Astro.site.href}recommendations`;
       <table>
         <thead>
           <tr>
-            <th>Ticker</th>
-            <th>Outcome</th>
-            <th>Follow-up</th>
+            <th class="compact">Ticker</th>
+            <th class="long">Outcome</th>
+            <th class="long">Follow-up</th>
           </tr>
         </thead>
         <tbody>
           {recommendations.completedOrRemoved.map((item) => (
             <tr>
-              <td><strong>{item.ticker}</strong></td>
-              <td>{item.outcome}</td>
-              <td>{item.followUp}</td>
+              <td class="compact"><strong>{item.ticker}</strong></td>
+              <td class="long">{item.outcome}</td>
+              <td class="long">{item.followUp}</td>
             </tr>
           ))}
         </tbody>
@@ -125,7 +125,22 @@ const permalink = `${Astro.site.href}recommendations`;
   }
 
   table {
-    min-width: 860px;
-    width: 100%;
+    table-layout: auto;
+    width: max-content;
+  }
+
+  .compact,
+  .numeric {
+    white-space: nowrap;
+  }
+
+  .numeric {
+    text-align: right;
+  }
+
+  .long {
+    max-width: 26rem;
+    min-width: 16rem;
+    white-space: normal;
   }
 </style>

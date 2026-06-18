@@ -1,16 +1,17 @@
 {
-  "asOf": "2026-06-17 08:50 SGT",
+  "asOf": "2026-06-18 08:10 SGT",
   "items": [
-    { "rank": 1, "name": "GE", "type": "Hold", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; trim near 360-365" },
-    { "rank": 2, "name": "JPM", "type": "Hold", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; no chase add before FOMC" },
-    { "rank": 3, "name": "XLE", "type": "Short hedge", "score": "8/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold short hedge; tighten if 57.5-58 reclaim" },
-    { "rank": 4, "name": "GOOGL", "type": "Watch", "score": "7/10", "thesisStatus": "Intact", "inertia": "No", "action": "Conditional only if holds 373 and QQQ stabilizes" },
-    { "rank": 5, "name": "NVDA", "type": "Hold", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold; no add unless above 211.5-212.5 and QQQ above 740" },
-    { "rank": 6, "name": "SMH", "type": "Hold", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold; watch 605/600" },
-    { "rank": 7, "name": "AMZN", "type": "Watch", "score": "6/10", "thesisStatus": "Intact", "inertia": "No", "action": "Buy only 242-244 hold or above 248.5 reclaim" },
-    { "rank": 8, "name": "XLI/CAT", "type": "Watch", "score": "6/10", "thesisStatus": "Intact but extended", "inertia": "No", "action": "No chase" },
-    { "rank": 9, "name": "LLY", "type": "Watch", "score": "5/10", "thesisStatus": "Yellow", "inertia": "No", "action": "No entry unless 1135-1137 hold" },
-    { "rank": 10, "name": "AVGO", "type": "Removed/Wait", "score": "4/10", "thesisStatus": "Setup weakened", "inertia": "No", "action": "Remove until reclaim/rebuild" },
-    { "rank": 11, "name": "TSLA", "type": "Removed", "score": "N/A", "thesisStatus": "Old short invalidated", "inertia": "No", "action": "No action unless new setup or below 380" }
+    { "rank": 1, "name": "GE", "type": "Hold / trim watch", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; trim 20%-30% only near 360-365 stall" },
+    { "rank": 2, "name": "JPM", "type": "Hold / trim watch", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; consider small trim only near 338-340 stall" },
+    { "rank": 3, "name": "XLE", "type": "Short hedge", "score": "8/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold short; tighten if 55.25-55.50 reclaim, bigger review at 57.5-58" },
+    { "rank": 4, "name": "AMZN", "type": "Watch", "score": "6/10", "thesisStatus": "Intact but unconfirmed", "inertia": "No", "action": "Buy only if 242-244 reclaimed/held and QQQ stabilizes" },
+    { "rank": 5, "name": "GOOGL", "type": "Watch", "score": "6/10", "thesisStatus": "Intact but below trigger", "inertia": "No", "action": "Buy only if 373 reclaimed/held and QQQ >740" },
+    { "rank": 6, "name": "XLI/CAT", "type": "Watch", "score": "6/10", "thesisStatus": "Intact but extended", "inertia": "No", "action": "No chase; wait for pullback" },
+    { "rank": 7, "name": "COST/WMT", "type": "Watch", "score": "6/10", "thesisStatus": "Defensive quality", "inertia": "No", "action": "Watch only if market turns more defensive" },
+    { "rank": 8, "name": "SMH", "type": "Hold only", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold, no add; review below 605/600" },
+    { "rank": 9, "name": "NVDA", "type": "Hold only", "score": "4/10", "thesisStatus": "Yellow, near Orange", "inertia": "Partial", "action": "Hold only; no add; review below 205/204" },
+    { "rank": 10, "name": "LLY", "type": "Watch only", "score": "5/10", "thesisStatus": "Yellow", "inertia": "No", "action": "No entry unless 1135-1137 reclaimed" },
+    { "rank": 11, "name": "AVGO", "type": "Removed/Wait", "score": "4/10", "thesisStatus": "Setup weakened", "inertia": "No", "action": "Remove until reclaim/rebuild" },
+    { "rank": 12, "name": "TSLA", "type": "Removed", "score": "N/A", "thesisStatus": "Old short invalidated", "inertia": "No", "action": "No action unless fresh setup forms" }
   ]
 }

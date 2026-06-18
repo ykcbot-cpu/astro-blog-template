@@ -1,0 +1,77 @@
+{
+  "asOf": "2026-06-18 08:10 SGT",
+  "baseCurrency": "USD",
+  "initialCapitalUsd": 1000000,
+  "inceptionDate": "2026-06-12",
+  "summary": {
+    "realizedPnlUsd": -1895.52,
+    "unrealizedPnlUsd": 9997.62,
+    "totalPnlUsd": 8102.1,
+    "totalReturnPct": 0.81
+  },
+  "years": [
+    {
+      "year": 2026,
+      "period": "2026-06-12 to 2026-06-18",
+      "startingCapitalUsd": 1000000,
+      "realizedPnlUsd": -1895.52,
+      "unrealizedPnlUsd": 9997.62,
+      "totalPnlUsd": 8102.1,
+      "returnPct": 0.81,
+      "status": "Open year; YTD equals since-inception until the portfolio crosses into 2027."
+    }
+  ],
+  "positionBreakdown": [
+    {
+      "ticker": "GE",
+      "direction": "Long",
+      "quantity": 150,
+      "entryPrice": 335.6,
+      "lastPriceUsed": 356.46,
+      "unrealizedPnlUsd": 3129
+    },
+    {
+      "ticker": "JPM",
+      "direction": "Long",
+      "quantity": 160,
+      "entryPrice": 313.41,
+      "lastPriceUsed": 335.26,
+      "unrealizedPnlUsd": 3496
+    },
+    {
+      "ticker": "SMH",
+      "direction": "Long",
+      "quantity": 74,
+      "entryPrice": 605.6,
+      "lastPriceUsed": 632.16,
+      "unrealizedPnlUsd": 1965.44
+    },
+    {
+      "ticker": "NVDA",
+      "direction": "Long",
+      "quantity": 440,
+      "entryPrice": 206.63,
+      "lastPriceUsed": 206.8,
+      "unrealizedPnlUsd": 74.8
+    },
+    {
+      "ticker": "XLE",
+      "direction": "Short hedge",
+      "quantity": 614,
+      "entryPrice": 57.09,
+      "lastPriceUsed": 54.92,
+      "unrealizedPnlUsd": 1332.38
+    }
+  ],
+  "closedPositions": [
+    {
+      "ticker": "QQQ",
+      "direction": "Short hedge",
+      "quantity": 83,
+      "entryPrice": 718.19,
+      "exitPrice": 740.95,
+      "exitDate": "2026-06-15 21:47 SGT",
+      "realizedPnlUsd": -1895.52
+    }
+  ]
+}

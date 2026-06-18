@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-06-17 08:50 SGT",
-  "regime": "Neutral / selective rotation",
+  "asOf": "2026-06-18 08:10 SGT",
+  "regime": "Neutral / selective rotation with post-FOMC risk-off pressure",
   "exposure": {
-    "longNotionalUsd": 242600,
-    "shortNotionalUsd": 34000,
+    "longNotionalUsd": 243819.6,
+    "shortNotionalUsd": 33718.88,
     "grossExposurePct": 27.7,
     "netExposurePct": 20.9,
     "recommendedNetExposurePct": "20-25"
@@ -15,13 +15,13 @@
       "direction": "Long",
       "quantity": 150,
       "entryPrice": 335.6,
-      "lastPriceUsed": 351.73,
+      "lastPriceUsed": 356.46,
       "stop": 314,
       "target": 365,
       "score": "9/10",
       "status": "Active",
       "thesis": "Intact",
-      "action": "Hold; consider trim near 360-365."
+      "action": "Hold; trim 20%-30% only near 360-365 if price stalls."
     },
     {
       "ticker": "JPM",
@@ -29,13 +29,13 @@
       "direction": "Long",
       "quantity": 160,
       "entryPrice": 313.41,
-      "lastPriceUsed": 331.14,
+      "lastPriceUsed": 335.26,
       "stop": 298,
       "target": 340,
       "score": "9/10",
       "status": "Active",
       "thesis": "Intact / working",
-      "action": "Hold; no chase add before FOMC."
+      "action": "Hold; consider a small trim only near 338-340 if price stalls or rejects."
     },
     {
       "ticker": "NVDA",
@@ -43,13 +43,13 @@
       "direction": "Long",
       "quantity": 440,
       "entryPrice": 206.63,
-      "lastPriceUsed": 207.41,
+      "lastPriceUsed": 206.8,
       "stop": 191,
       "target": 230,
-      "score": "5/10",
+      "score": "4/10",
       "status": "Active",
-      "thesis": "Yellow due QQQ and semi weakness",
-      "action": "Hold; no add unless NVDA reclaims 211.5-212.5 and QQQ reclaims 740."
+      "thesis": "Yellow, near Orange if 205/204 breaks",
+      "action": "Hold only; no add while QQQ remains below 740. Reassess for risk reduction below 205/204."
     },
     {
       "ticker": "SMH",
@@ -57,13 +57,13 @@
       "direction": "Long",
       "quantity": 74,
       "entryPrice": 605.6,
-      "lastPriceUsed": 616,
+      "lastPriceUsed": 632.16,
       "stop": 565,
       "target": 675,
       "score": "5/10",
       "status": "Active",
-      "thesis": "Yellow due semi weakness",
-      "action": "Hold; no add; watch 605/600."
+      "thesis": "Yellow due QQQ and semi weakness",
+      "action": "Hold only; no add; review if SMH loses 605, then 600."
     },
     {
       "ticker": "XLE",
@@ -71,13 +71,13 @@
       "direction": "Short hedge",
       "quantity": 614,
       "entryPrice": 57.09,
-      "lastPriceUsed": 55.36,
+      "lastPriceUsed": 54.92,
       "stop": 61,
       "target": 52.5,
       "score": "8/10",
       "status": "Active",
       "thesis": "Intact hedge",
-      "action": "Hold short hedge; tighten if XLE reclaims 57.5-58."
+      "action": "Hold short hedge; tighten if XLE reclaims 55.25-55.50 intraday; bigger thesis review at 57.5-58."
     }
   ],
   "recentlyClosed": [

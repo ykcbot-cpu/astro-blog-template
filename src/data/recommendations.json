@@ -1,24 +1,24 @@
 {
-  "asOf": "2026-06-17 08:50 SGT",
-  "summary": "No new full-size orders before FOMC clarity. Keep current book, let GE/JPM work, hold XLE hedge, and do not add semis while QQQ remains below 740.",
+  "asOf": "2026-06-18 08:10 SGT",
+  "summary": "FOMC has cleared, but the market response was risk-off. No new buys unless QQQ reclaims 740 and the individual name clears its trigger.",
   "active": [
     {
       "ticker": "AMZN",
       "recommendation": "Watch / conditional long",
-      "trigger": "Buy only on 242-244 hold or reclaim above 248.5",
+      "trigger": "Buy only on 242-244 reclaim/hold, stronger above 248.5, and QQQ stabilization",
       "stop": "236",
       "target": "265",
       "status": "Still pending",
-      "followUp": "Do not chase."
+      "followUp": "Do not buy while below 242 or if QQQ remains weak."
     },
     {
       "ticker": "GOOGL",
       "recommendation": "Watch / conditional long",
-      "trigger": "Conditional only if it holds 373 and QQQ stabilizes",
+      "trigger": "Buy only if 373 is reclaimed/held and QQQ >740",
       "stop": "356",
       "target": "390",
-      "status": "Upgraded watch",
-      "followUp": "Still requires QQQ stabilization before action."
+      "status": "Still pending",
+      "followUp": "Needs both single-name trigger and market confirmation."
     },
     {
       "ticker": "XLI",
@@ -28,6 +28,24 @@
       "target": "TBD",
       "status": "Still pending",
       "followUp": "Industrial theme intact but extended."
+    },
+    {
+      "ticker": "COST",
+      "recommendation": "Watch only",
+      "trigger": "Defensive quality watch if breadth deteriorates",
+      "stop": "TBD",
+      "target": "TBD",
+      "status": "New watch",
+      "followUp": "Not a buy unless market turns more defensive and setup tightens."
+    },
+    {
+      "ticker": "WMT",
+      "recommendation": "Watch only",
+      "trigger": "Defensive quality watch if breadth deteriorates",
+      "stop": "TBD",
+      "target": "TBD",
+      "status": "New watch",
+      "followUp": "Not a buy unless market turns more defensive and setup tightens."
     },
     {
       "ticker": "CAT",
@@ -52,7 +70,7 @@
     {
       "ticker": "NVDA",
       "outcome": "Triggered and executed: 147 shares at 211.08 on 2026-06-15 23:30 SGT",
-      "followUp": "Hold; no further add unless pullback/rebase."
+      "followUp": "Hold only; no further add unless NVDA reclaims 209.2/212.5 and QQQ >740."
     },
     {
       "ticker": "QQQ",

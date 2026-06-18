@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import performance from '../data/performance.json';
+
+const title = 'Performance';
+const description = 'KumoTrade portfolio performance by year and since inception.';
+const permalink = `${Astro.site.href}performance`;
+
+const currency = new Intl.NumberFormat('en-US', {
+  currency: performance.baseCurrency,
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+  style: 'currency',
+});
+
+const signedCurrency = (value) => {
+  const formatted = currency.format(Math.abs(value));
+  return value < 0 ? `-${formatted}` : `+${formatted}`;
+};
+
+const signedPct = (value) => `${value < 0 ? '' : '+'}${value.toFixed(2)}%`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="performance">
+  <div class="container dashboard">
+    <header class="page-header">
+      <p class="eyebrow">As of {performance.asOf}</p>
+      <h1>Performance</h1>
+      <p class="summary">
+        Yearly portfolio record with current YTD and since-inception P&amp;L. 2026 starts from portfolio inception on {performance.inceptionDate}.
+      </p>
+    </header>
+
+    <section class="metrics" aria-label="Performance summary">
+      <div>
+        <span>Realized P&amp;L</span>
+        <strong class:list={[performance.summary.realizedPnlUsd < 0 ? 'negative' : 'positive']}>
+          {signedCurrency(performance.summary.realizedPnlUsd)}
+        </strong>
+      </div>
+      <div>
+        <span>Unrealized P&amp;L</span>
+        <strong class="positive">{signedCurrency(performance.summary.unrealizedPnlUsd)}</strong>
+      </div>
+      <div>
+        <span>Total P&amp;L</span>
+        <strong class="positive">{signedCurrency(performance.summary.totalPnlUsd)}</strong>
+      </div>
+      <div>
+        <span>Return</span>
+        <strong class="positive">{signedPct(performance.summary.totalReturnPct)}</strong>
+      </div>
+    </section>
+
+    <section class="table-wrap" aria-label="Annual performance">
+      <h2>Yearly Performance</h2>
+      <table class="fit-table">
+        <thead>
+          <tr>
+            <th class="compact">Year</th>
+            <th class="compact">Period</th>
+            <th class="numeric">Starting Capital</th>
+            <th class="numeric">Realized P&amp;L</th>
+            <th class="numeric">Unrealized P&amp;L</th>
+            <th class="numeric">Total P&amp;L</th>
+            <th class="numeric">Return</th>
+            <th class="long">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {performance.years.map((year) => (
+            <tr>
+              <td class="compact"><strong>{year.year}</strong></td>
+              <td class="compact">{year.period}</td>
+              <td class="numeric">{currency.format(year.startingCapitalUsd)}</td>
+              <td class:list={['numeric', year.realizedPnlUsd < 0 ? 'negative' : 'positive']}>{signedCurrency(year.realizedPnlUsd)}</td>
+              <td class="numeric positive">{signedCurrency(year.unrealizedPnlUsd)}</td>
+              <td class="numeric positive">{signedCurrency(year.totalPnlUsd)}</td>
+              <td class="numeric positive">{signedPct(year.returnPct)}</td>
+              <td class="long">{year.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-wrap" aria-label="Open position P&L">
+      <h2>Open Position P&amp;L</h2>
+      <table class="fit-table">
+        <thead>
+          <tr>
+            <th class="compact">Ticker</th>
+            <th class="compact">Direction</th>
+            <th class="numeric">Qty</th>
+            <th class="numeric">Entry</th>
+            <th class="numeric">Last Price Used</th>
+            <th class="numeric">Unrealized P&amp;L</th>
+          </tr>
+        </thead>
+        <tbody>
+          {performance.positionBreakdown.map((position) => (
+            <tr>
+              <td class="compact"><strong>{position.ticker}</strong></td>
+              <td class="compact">{position.direction}</td>
+              <td class="numeric">{position.quantity}</td>
+              <td class="numeric">{position.entryPrice}</td>
+              <td class="numeric">{position.lastPriceUsed}</td>
+              <td class:list={['numeric', position.unrealizedPnlUsd < 0 ? 'negative' : 'positive']}>
+                {signedCurrency(position.unrealizedPnlUsd)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .dashboard {
+    max-width: 84em;
+  }
+
+  .page-header {
+    margin: 2rem 0;
+  }
+
+  .eyebrow,
+  .summary {
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+  }
+
+  .summary {
+    max-width: 62rem;
+  }
+
+  .metrics {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 2rem 0;
+  }
+
+  .metrics div {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .metrics span {
+    color: var(--text-secondary);
+    display: block;
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .metrics strong {
+    display: block;
+    font-family: var(--font-family-sans);
+    font-size: 1.6rem;
+    margin-top: 0.4rem;
+  }
+
+  .positive {
+    color: #247a4d;
+  }
+
+  .negative {
+    color: #a33a3a;
+  }
+
+  .table-wrap {
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+
+  .fit-table {
+    table-layout: auto;
+    width: max-content;
+  }
+
+  .compact,
+  .numeric {
+    white-space: nowrap;
+  }
+
+  .numeric {
+    text-align: right;
+  }
+
+  .long {
+    max-width: 24rem;
+    min-width: 18rem;
+    white-space: normal;
+  }
+
+  @media (max-width: 900px) {
+    .metrics {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -35,25 +35,27 @@ const permalink = `${Astro.site.href}holdings`;
       <table>
         <thead>
           <tr>
-            <th>Ticker</th>
-            <th>Direction</th>
-            <th>Qty</th>
-            <th>Entry</th>
-            <th>Score</th>
-            <th>Thesis</th>
-            <th>Action</th>
+            <th class="compact">Ticker</th>
+            <th class="compact">Direction</th>
+            <th class="numeric">Qty</th>
+            <th class="numeric">Entry</th>
+            <th class="numeric">Last</th>
+            <th class="compact">Score</th>
+            <th class="long">Thesis</th>
+            <th class="long">Action</th>
           </tr>
         </thead>
         <tbody>
           {holdings.positions.map((position) => (
             <tr>
-              <td><strong>{position.ticker}</strong></td>
-              <td>{position.direction}</td>
-              <td>{position.quantity}</td>
-              <td>{position.entryPrice}</td>
-              <td>{position.score}</td>
-              <td>{position.thesis}</td>
-              <td>{position.action}</td>
+              <td class="compact"><strong>{position.ticker}</strong></td>
+              <td class="compact">{position.direction}</td>
+              <td class="numeric">{position.quantity}</td>
+              <td class="numeric">{position.entryPrice}</td>
+              <td class="numeric">{position.lastPriceUsed}</td>
+              <td class="compact">{position.score}</td>
+              <td class="long">{position.thesis}</td>
+              <td class="long">{position.action}</td>
             </tr>
           ))}
         </tbody>
@@ -65,23 +67,23 @@ const permalink = `${Astro.site.href}holdings`;
       <table>
         <thead>
           <tr>
-            <th>Ticker</th>
-            <th>Direction</th>
-            <th>Entry</th>
-            <th>Exit</th>
-            <th>Realized P&L</th>
-            <th>Reason</th>
+            <th class="compact">Ticker</th>
+            <th class="compact">Direction</th>
+            <th class="numeric">Entry</th>
+            <th class="numeric">Exit</th>
+            <th class="numeric">Realized P&L</th>
+            <th class="long">Reason</th>
           </tr>
         </thead>
         <tbody>
           {holdings.recentlyClosed.map((position) => (
             <tr>
-              <td><strong>{position.ticker}</strong></td>
-              <td>{position.direction}</td>
-              <td>{position.entryPrice}</td>
-              <td>{position.exitPrice}</td>
-              <td>{position.realizedPnlUsd}</td>
-              <td>{position.reason}</td>
+              <td class="compact"><strong>{position.ticker}</strong></td>
+              <td class="compact">{position.direction}</td>
+              <td class="numeric">{position.entryPrice}</td>
+              <td class="numeric">{position.exitPrice}</td>
+              <td class="numeric">{position.realizedPnlUsd}</td>
+              <td class="long">{position.reason}</td>
             </tr>
           ))}
         </tbody>
@@ -141,8 +143,23 @@ const permalink = `${Astro.site.href}holdings`;
   }
 
   table {
-    min-width: 780px;
-    width: 100%;
+    table-layout: auto;
+    width: max-content;
+  }
+
+  .compact,
+  .numeric {
+    white-space: nowrap;
+  }
+
+  .numeric {
+    text-align: right;
+  }
+
+  .long {
+    max-width: 24rem;
+    min-width: 16rem;
+    white-space: normal;
   }
 
   @media (max-width: 760px) {

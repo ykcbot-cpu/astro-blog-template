@@ -68,7 +68,9 @@ const { current = '' } = Astro.props;
   <a class={current === "about" ? "selected" : ""} href='/about'>about</a>
   <a class={current === "blog" ? "selected" : ""} href='/blog'>blog</a>
   <a class={current === "holdings" ? "selected" : ""} href='/holdings'>holdings</a>
+  <a class={current === "performance" ? "selected" : ""} href='/performance'>p&l</a>
   <a class={current === "recommendations" ? "selected" : ""} href='/recommendations'>recs</a>
+  <a class={current === "thesis" ? "selected" : ""} href='/thesis'>thesis</a>
   <div class="theme-toggle-container">
     <ThemeToggleButton client:load />
   </div>
