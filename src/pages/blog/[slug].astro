@@ -54,4 +54,25 @@ const { Content } = await render(post)
     min-width: 100px;
     width: 30%;
   }
+
+  .content {
+    overflow-x: auto;
+  }
+
+  .content :global(table) {
+    table-layout: auto;
+    width: max-content;
+  }
+
+  .content :global(th),
+  .content :global(td) {
+    white-space: nowrap;
+  }
+
+  .content :global(th:nth-last-child(-n + 2)),
+  .content :global(td:nth-last-child(-n + 2)) {
+    max-width: 24rem;
+    min-width: 14rem;
+    white-space: normal;
+  }
 </style>

@@ -113,6 +113,38 @@ const signedPct = (value) => `${value < 0 ? '' : '+'}${value.toFixed(2)}%`;
         </tbody>
       </table>
     </section>
+
+    <section class="table-wrap" aria-label="Closed trade P&L">
+      <h2>Closed Trades</h2>
+      <table class="fit-table">
+        <thead>
+          <tr>
+            <th class="compact">Ticker</th>
+            <th class="compact">Direction</th>
+            <th class="numeric">Qty</th>
+            <th class="numeric">Entry</th>
+            <th class="numeric">Exit</th>
+            <th class="compact">Exit Date</th>
+            <th class="numeric">Realized P&amp;L</th>
+          </tr>
+        </thead>
+        <tbody>
+          {performance.closedPositions.map((position) => (
+            <tr>
+              <td class="compact"><strong>{position.ticker}</strong></td>
+              <td class="compact">{position.direction}</td>
+              <td class="numeric">{position.quantity}</td>
+              <td class="numeric">{position.entryPrice}</td>
+              <td class="numeric">{position.exitPrice}</td>
+              <td class="compact">{position.exitDate}</td>
+              <td class:list={['numeric', position.realizedPnlUsd < 0 ? 'negative' : 'positive']}>
+                {signedCurrency(position.realizedPnlUsd)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
   </div>
 </BaseLayout>
 
