@@ -15,7 +15,9 @@ const permalink = `${Astro.site.href}thesis`;
       <p class="summary">{thesis.summary}</p>
     </header>
 
-    <section class="thesis-grid" aria-label="Current thesis notes">
+    <section aria-label="Current thesis notes">
+      <h2 class="section-title">Active Thesis</h2>
+      <div class="thesis-grid">
       {thesis.items.map((item) => (
         <article class="thesis-card">
           <div class="card-header">
@@ -72,12 +74,97 @@ const permalink = `${Astro.site.href}thesis`;
               <dd>{item.levels}</dd>
             </div>
             <div>
+              <dt>Original Stop</dt>
+              <dd>{item.originalStop}</dd>
+            </div>
+            <div>
+              <dt>Original Take Profit</dt>
+              <dd>{item.originalTakeProfit}</dd>
+            </div>
+            <div>
+              <dt>Time Horizon</dt>
+              <dd>{item.timeHorizon}</dd>
+            </div>
+            <div>
               <dt>Action</dt>
               <dd>{item.action}</dd>
             </div>
           </dl>
         </article>
       ))}
+      </div>
+    </section>
+
+    <section aria-label="Invalidated or expired thesis notes">
+      <h2 class="section-title">Invalidated / Expired Thesis</h2>
+      <div class="thesis-grid inactive-grid">
+      {thesis.inactiveItems.map((item) => (
+        <article class="thesis-card inactive-card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">{item.type}</p>
+              <h2>{item.ticker}</h2>
+              <p class="name">{item.name}</p>
+            </div>
+            <div class="score">
+              <span>{item.score}</span>
+              <small>{item.status}</small>
+            </div>
+          </div>
+
+          <dl>
+            <div>
+              <dt>Inactive Reason</dt>
+              <dd>{item.inactiveReason}</dd>
+            </div>
+            <div>
+              <dt>Added</dt>
+              <dd>{item.addedDate}</dd>
+            </div>
+            <div>
+              <dt>Thesis Initiated</dt>
+              <dd>{item.thesisInitiatedDate}</dd>
+            </div>
+            <div>
+              <dt>Last Reviewed</dt>
+              <dd>{item.lastReviewedAt}</dd>
+            </div>
+            <div>
+              <dt>Thesis Last Updated</dt>
+              <dd>{item.thesisUpdatedAt}</dd>
+            </div>
+            <div>
+              <dt>Position</dt>
+              <dd>{item.position}</dd>
+            </div>
+            <div>
+              <dt>Core Thesis</dt>
+              <dd>{item.coreThesis}</dd>
+            </div>
+            <div>
+              <dt>Levels</dt>
+              <dd>{item.levels}</dd>
+            </div>
+            <div>
+              <dt>Original Stop</dt>
+              <dd>{item.originalStop}</dd>
+            </div>
+            <div>
+              <dt>Original Take Profit</dt>
+              <dd>{item.originalTakeProfit}</dd>
+            </div>
+            <div>
+              <dt>Time Horizon</dt>
+              <dd>{item.timeHorizon}</dd>
+            </div>
+            <div>
+              <dt>Action</dt>
+              <dd>{item.action}</dd>
+            </div>
+          </dl>
+        </article>
+      ))}
+      </div>
     </section>
   </div>
 </BaseLayout>
@@ -118,6 +205,11 @@ const permalink = `${Astro.site.href}thesis`;
     max-width: 62rem;
   }
 
+  .section-title {
+    font-size: 1.45rem;
+    margin: 2rem 0 1rem;
+  }
+
   .thesis-grid {
     display: grid;
     gap: 1rem;
@@ -128,6 +220,10 @@ const permalink = `${Astro.site.href}thesis`;
     border: 1px solid rgba(84, 142, 155, 0.35);
     border-radius: 8px;
     padding: 1.2rem;
+  }
+
+  .inactive-card {
+    background: rgba(84, 142, 155, 0.06);
   }
 
   .card-header {

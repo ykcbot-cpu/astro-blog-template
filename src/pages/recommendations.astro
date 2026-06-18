@@ -61,8 +61,11 @@ const permalink = `${Astro.site.href}recommendations`;
             <th class="compact">Added</th>
             <th class="compact">Last Reviewed</th>
             <th class="long">Trigger</th>
-            <th class="compact">Stop</th>
-            <th class="compact">Target</th>
+            <th class="compact">Original Stop</th>
+            <th class="compact">Original TP</th>
+            <th class="compact">Current Stop</th>
+            <th class="compact">Current TP</th>
+            <th class="compact">Horizon</th>
             <th class="long">Status</th>
           </tr>
         </thead>
@@ -75,8 +78,11 @@ const permalink = `${Astro.site.href}recommendations`;
               <td class="compact">{item.addedDate}</td>
               <td class="compact">{item.lastReviewedAt}</td>
               <td class="long">{item.trigger}</td>
+              <td class="compact">{item.originalStop}</td>
+              <td class="compact">{item.originalTakeProfit}</td>
               <td class="compact">{item.stop}</td>
               <td class="compact">{item.target}</td>
+              <td class="compact">{item.timeHorizon}</td>
               <td class="long">{item.status}</td>
             </tr>
           ))}
