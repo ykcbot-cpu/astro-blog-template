@@ -55,11 +55,10 @@ const { Content } = await render(post)
     width: 30%;
   }
 
-  .content {
-    overflow-x: auto;
-  }
-
   .content :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
     table-layout: auto;
     width: max-content;
   }
