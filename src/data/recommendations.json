@@ -9,7 +9,11 @@
       "stop": "236",
       "target": "265",
       "status": "Still pending",
-      "followUp": "Do not buy while below 242 or if QQQ remains weak."
+      "followUp": "Do not buy while below 242 or if QQQ remains weak.",
+      "category": "Active Recommendation",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "GOOGL",
@@ -18,7 +22,11 @@
       "stop": "356",
       "target": "390",
       "status": "Still pending",
-      "followUp": "Needs both single-name trigger and market confirmation."
+      "followUp": "Needs both single-name trigger and market confirmation.",
+      "category": "Active Recommendation",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "XLI",
@@ -27,7 +35,11 @@
       "stop": "TBD",
       "target": "TBD",
       "status": "Still pending",
-      "followUp": "Industrial theme intact but extended."
+      "followUp": "Industrial theme intact but extended.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "COST",
@@ -36,7 +48,11 @@
       "stop": "TBD",
       "target": "TBD",
       "status": "New watch",
-      "followUp": "Not a buy unless market turns more defensive and setup tightens."
+      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-18",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "WMT",
@@ -45,7 +61,11 @@
       "stop": "TBD",
       "target": "TBD",
       "status": "New watch",
-      "followUp": "Not a buy unless market turns more defensive and setup tightens."
+      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-18",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "CAT",
@@ -54,7 +74,11 @@
       "stop": "TBD",
       "target": "TBD",
       "status": "Still pending",
-      "followUp": "Industrial theme intact but extended."
+      "followUp": "Industrial theme intact but extended.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "LLY",
@@ -63,29 +87,49 @@
       "stop": "TBD",
       "target": "TBD",
       "status": "Still downgraded",
-      "followUp": "No entry while below reclaim zone."
+      "followUp": "No entry while below reclaim zone.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     }
   ],
   "completedOrRemoved": [
     {
       "ticker": "NVDA",
       "outcome": "Triggered and executed: 147 shares at 211.08 on 2026-06-15 23:30 SGT",
-      "followUp": "Hold only; no further add unless NVDA reclaims 209.2/212.5 and QQQ >740."
+      "followUp": "Hold only; no further add unless NVDA reclaims 209.2/212.5 and QQQ >740.",
+      "category": "Removed/Completed",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "QQQ",
       "outcome": "Closed at 740.95 on 2026-06-15 21:47 SGT",
-      "followUp": "Removed; do not reopen without fresh breakdown."
+      "followUp": "Removed; do not reopen without fresh breakdown.",
+      "category": "Removed/Completed",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "AVGO",
       "outcome": "Downgraded/removed after preferred setup failed and traded near stop zone",
-      "followUp": "Remove until reclaim/rebuild."
+      "followUp": "Remove until reclaim/rebuild.",
+      "category": "Removed/Completed",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "TSLA",
       "outcome": "Old short invalidated",
-      "followUp": "No action unless new setup forms or price breaks below 380."
+      "followUp": "No action unless new setup forms or price breaks below 380.",
+      "category": "Removed/Completed",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     }
   ]
 }

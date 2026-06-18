@@ -32,6 +32,22 @@ const permalink = `${Astro.site.href}thesis`;
 
           <dl>
             <div>
+              <dt>Added</dt>
+              <dd>{item.addedDate}</dd>
+            </div>
+            <div>
+              <dt>Thesis Initiated</dt>
+              <dd>{item.thesisInitiatedDate}</dd>
+            </div>
+            <div>
+              <dt>Last Reviewed</dt>
+              <dd>{item.lastReviewedAt}</dd>
+            </div>
+            <div>
+              <dt>Thesis Last Updated</dt>
+              <dd>{item.thesisUpdatedAt}</dd>
+            </div>
+            <div>
               <dt>Position</dt>
               <dd>{item.position}</dd>
             </div>

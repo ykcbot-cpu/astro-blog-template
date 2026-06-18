@@ -1,6 +1,6 @@
 {
   "asOf": "2026-06-18 08:10 SGT",
-  "summary": "Curated public thesis notes for current holdings and key recommendations. Operational IC notes remain in the private archive.",
+  "summary": "Curated public thesis notes for current holdings and key recommendations. Each thesis shows when it was first added and last reviewed.",
   "items": [
     {
       "ticker": "GE",
@@ -15,7 +15,11 @@
       "catalysts": "Aircraft engine demand, margin expansion, execution quality, and backlog conversion.",
       "risks": "Supply-chain pressure, cyclical slowdown, or a failed breakout near the trim zone.",
       "levels": "Target / trim zone: 360-365. Review below 340. Hard stop: 314.",
-      "action": "Hold. Trim 20%-30% only if it reaches 360-365 and stalls."
+      "action": "Hold. Trim 20%-30% only if it reaches 360-365 and stalls.",
+      "addedDate": "2026-06-12",
+      "thesisInitiatedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "JPM",
@@ -30,7 +34,11 @@
       "catalysts": "Stable credit, capital return, resilient US growth, and continued financial-sector rotation.",
       "risks": "Credit deterioration, yield-curve pressure, regulation, or rejection near the target zone.",
       "levels": "Target / trim zone: 338-340. Soft review below 325. Stronger review below 318-320. Stop: 298.",
-      "action": "Hold. Consider a small trim near 338-340 only if price stalls or rejects."
+      "action": "Hold. Consider a small trim near 338-340 only if price stalls or rejects.",
+      "addedDate": "2026-06-12",
+      "thesisInitiatedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "XLE",
@@ -45,7 +53,11 @@
       "catalysts": "Continued energy weakness, broad market hesitation, or risk-off sector rotation.",
       "risks": "Energy rebound, oil price strength, or XLE reclaiming key resistance.",
       "levels": "Tighten if XLE reclaims 55.25-55.50 intraday. Bigger thesis review at 57.5-58. Target: 52.5. Stop: 61.",
-      "action": "Hold short hedge."
+      "action": "Hold short hedge.",
+      "addedDate": "2026-06-12",
+      "thesisInitiatedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "SMH",
@@ -60,7 +72,11 @@
       "catalysts": "AI capex, earnings revisions, and renewed semiconductor leadership.",
       "risks": "Crowded AI trade, higher-rate pressure, or loss of technical support.",
       "levels": "Review below 605. Stronger review below 600. Target: 675. Stop: 565.",
-      "action": "Hold only. No add."
+      "action": "Hold only. No add.",
+      "addedDate": "2026-06-12",
+      "thesisInitiatedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "NVDA",
@@ -75,7 +91,11 @@
       "catalysts": "Reclaim above 209.2, stronger confirmation above 211.5-212.5, and QQQ back above 740.",
       "risks": "Break below 205/204 while QQQ remains weak, which would force risk-reduction review.",
       "levels": "No add below 209.2/212.5. Review below 205/204. Target: 230. Stop: 191.",
-      "action": "Hold only. No balance deployment."
+      "action": "Hold only. No balance deployment.",
+      "addedDate": "2026-06-12",
+      "thesisInitiatedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "AMZN",
@@ -90,7 +110,11 @@
       "catalysts": "Reclaim and hold of 242-244, stronger above 248.5, with QQQ stabilization.",
       "risks": "Failure below the confirmation band or continued mega-cap tech weakness.",
       "levels": "Trigger: 242-244 reclaim/hold. Stronger above 248.5. Stop: 236. Target: 265.",
-      "action": "Watch only. Do not chase."
+      "action": "Watch only. Do not chase.",
+      "addedDate": "2026-06-17",
+      "thesisInitiatedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "GOOGL",
@@ -105,7 +129,11 @@
       "catalysts": "Reclaim and hold of 373, with QQQ above 740.",
       "risks": "Continued QQQ weakness or failure to reclaim the trigger.",
       "levels": "Trigger: 373 reclaim/hold and QQQ >740. Stop: 356. Target: 390.",
-      "action": "Watch only until both conditions are met."
+      "action": "Watch only until both conditions are met.",
+      "addedDate": "2026-06-17",
+      "thesisInitiatedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     }
   ]
 }

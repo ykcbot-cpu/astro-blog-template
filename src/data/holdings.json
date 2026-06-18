@@ -21,7 +21,10 @@
       "score": "9/10",
       "status": "Active",
       "thesis": "Intact",
-      "action": "Hold; trim 20%-30% only near 360-365 if price stalls."
+      "action": "Hold; trim 20%-30% only near 360-365 if price stalls.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "JPM",
@@ -35,7 +38,10 @@
       "score": "9/10",
       "status": "Active",
       "thesis": "Intact / working",
-      "action": "Hold; consider a small trim only near 338-340 if price stalls or rejects."
+      "action": "Hold; consider a small trim only near 338-340 if price stalls or rejects.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "NVDA",
@@ -49,7 +55,10 @@
       "score": "4/10",
       "status": "Active",
       "thesis": "Yellow, near Orange if 205/204 breaks",
-      "action": "Hold only; no add while QQQ remains below 740. Reassess for risk reduction below 205/204."
+      "action": "Hold only; no add while QQQ remains below 740. Reassess for risk reduction below 205/204.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "SMH",
@@ -63,7 +72,10 @@
       "score": "5/10",
       "status": "Active",
       "thesis": "Yellow due QQQ and semi weakness",
-      "action": "Hold only; no add; review if SMH loses 605, then 600."
+      "action": "Hold only; no add; review if SMH loses 605, then 600.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     },
     {
       "ticker": "XLE",
@@ -77,7 +89,10 @@
       "score": "8/10",
       "status": "Active",
       "thesis": "Intact hedge",
-      "action": "Hold short hedge; tighten if XLE reclaims 55.25-55.50 intraday; bigger thesis review at 57.5-58."
+      "action": "Hold short hedge; tighten if XLE reclaims 55.25-55.50 intraday; bigger thesis review at 57.5-58.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-18"
     }
   ],
   "recentlyClosed": [
@@ -89,7 +104,10 @@
       "exitPrice": 740.95,
       "exitDate": "2026-06-15 21:47 SGT",
       "realizedPnlUsd": -1895.52,
-      "reason": "Stop breach / hedge thesis invalidated by tech strength."
+      "reason": "Stop breach / hedge thesis invalidated by tech strength.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-18 08:10 SGT",
+      "thesisUpdatedAt": "2026-06-15"
     }
   ]
 }

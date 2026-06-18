@@ -40,6 +40,8 @@ const permalink = `${Astro.site.href}holdings`;
             <th class="numeric">Qty</th>
             <th class="numeric">Entry</th>
             <th class="numeric">Last</th>
+            <th class="compact">Added</th>
+            <th class="compact">Last Reviewed</th>
             <th class="compact">Score</th>
             <th class="long">Thesis</th>
             <th class="long">Action</th>
@@ -53,6 +55,8 @@ const permalink = `${Astro.site.href}holdings`;
               <td class="numeric">{position.quantity}</td>
               <td class="numeric">{position.entryPrice}</td>
               <td class="numeric">{position.lastPriceUsed}</td>
+              <td class="compact">{position.addedDate}</td>
+              <td class="compact">{position.lastReviewedAt}</td>
               <td class="compact">{position.score}</td>
               <td class="long">{position.thesis}</td>
               <td class="long">{position.action}</td>
@@ -72,6 +76,8 @@ const permalink = `${Astro.site.href}holdings`;
             <th class="numeric">Entry</th>
             <th class="numeric">Exit</th>
             <th class="numeric">Realized P&L</th>
+            <th class="compact">Added</th>
+            <th class="compact">Last Reviewed</th>
             <th class="long">Reason</th>
           </tr>
         </thead>
@@ -83,6 +89,8 @@ const permalink = `${Astro.site.href}holdings`;
               <td class="numeric">{position.entryPrice}</td>
               <td class="numeric">{position.exitPrice}</td>
               <td class="numeric">{position.realizedPnlUsd}</td>
+              <td class="compact">{position.addedDate}</td>
+              <td class="compact">{position.lastReviewedAt}</td>
               <td class="long">{position.reason}</td>
             </tr>
           ))}
