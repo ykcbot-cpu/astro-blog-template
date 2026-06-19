@@ -1,11 +1,15 @@
 ---
-import { getCollection, render } from 'astro:content'
 import readingTime from 'reading-time'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Bio from '../../components/Bio.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('posts')
+	const postModules = import.meta.glob('../../data/blog-posts/*.md', { eager: true });
+  const posts = Object.values(postModules).map((post) => ({
+    data: post.frontmatter,
+    Content: post.Content,
+    raw: post.rawContent?.() ?? '',
+  }));
   return posts.map(p => ({
     params: { slug: p.data.slug },
     props: { post: p },
@@ -14,9 +18,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props
 const { title, slug, description, publishDate } = post.data;
-const readingTimeEstimate = readingTime(post.body).text
+const readingTimeEstimate = readingTime(post.raw).text
 const permalink = `${Astro.site.href}blog/${slug}`;
-const { Content } = await render(post)
+const { Content } = post
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">

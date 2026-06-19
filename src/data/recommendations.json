@@ -1,22 +1,22 @@
 {
-  "asOf": "2026-06-18 08:10 SGT",
-  "summary": "FOMC has cleared, but the market response was risk-off. No new buys unless QQQ reclaims 740 and the individual name clears its trigger.",
+  "asOf": "2026-06-19 08:52 SGT",
+  "summary": "Market improved, but SPY remains below 750 and QQQ closed just below 740. AMZN is the closest conditional long because its price trigger was touched, but market confirmation is still required.",
   "active": [
     {
       "ticker": "AMZN",
-      "recommendation": "Watch / conditional long",
-      "trigger": "Buy only on 242-244 reclaim/hold, stronger above 248.5, and QQQ stabilization",
+      "recommendation": "Top conditional long watch",
+      "trigger": "Buy only if QQQ closes/holds above 740; AMZN already touched 242-244 trigger zone; stronger above 248.5",
       "stop": "236",
       "target": "265",
       "originalStop": "236",
       "originalTakeProfit": "265",
       "timeHorizon": "4-10 weeks after entry",
-      "status": "Still pending",
-      "followUp": "Do not buy while below 242 or if QQQ remains weak.",
+      "status": "Trigger touched, market unconfirmed",
+      "followUp": "Do not buy automatically. If QQQ confirms above 740, review starter-size entry.",
       "category": "Active Recommendation",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "GOOGL",
@@ -31,8 +31,24 @@
       "followUp": "Needs both single-name trigger and market confirmation.",
       "category": "Active Recommendation",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
+    },
+    {
+      "ticker": "AVGO",
+      "recommendation": "Rebuild watch only",
+      "trigger": "Wait for setup rebuild after sharp rebound; no chase",
+      "stop": "TBD",
+      "target": "TBD",
+      "originalStop": "Expired",
+      "originalTakeProfit": "Expired",
+      "timeHorizon": "TBD until actionable setup",
+      "status": "Watch only",
+      "followUp": "Rebound improved, but still not clean enough to re-add without a controlled trigger.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-17",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "XLI",
@@ -44,43 +60,11 @@
       "originalTakeProfit": "TBD",
       "timeHorizon": "TBD until actionable setup",
       "status": "Still pending",
-      "followUp": "Industrial theme intact but extended.",
+      "followUp": "Industrial theme intact but already expressed through GE.",
       "category": "Watchlist",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
-    },
-    {
-      "ticker": "COST",
-      "recommendation": "Watch only",
-      "trigger": "Defensive quality watch if breadth deteriorates",
-      "stop": "TBD",
-      "target": "TBD",
-      "originalStop": "TBD",
-      "originalTakeProfit": "TBD",
-      "timeHorizon": "TBD until actionable setup",
-      "status": "New watch",
-      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
-      "category": "Watchlist",
-      "addedDate": "2026-06-18",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
-    },
-    {
-      "ticker": "WMT",
-      "recommendation": "Watch only",
-      "trigger": "Defensive quality watch if breadth deteriorates",
-      "stop": "TBD",
-      "target": "TBD",
-      "originalStop": "TBD",
-      "originalTakeProfit": "TBD",
-      "timeHorizon": "TBD until actionable setup",
-      "status": "New watch",
-      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
-      "category": "Watchlist",
-      "addedDate": "2026-06-18",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "CAT",
@@ -95,8 +79,40 @@
       "followUp": "Industrial theme intact but extended.",
       "category": "Watchlist",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
+    },
+    {
+      "ticker": "COST",
+      "recommendation": "Watch only",
+      "trigger": "Defensive quality watch if breadth deteriorates",
+      "stop": "TBD",
+      "target": "TBD",
+      "originalStop": "TBD",
+      "originalTakeProfit": "TBD",
+      "timeHorizon": "TBD until actionable setup",
+      "status": "Watch only",
+      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-18",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
+    },
+    {
+      "ticker": "WMT",
+      "recommendation": "Watch only",
+      "trigger": "Defensive quality watch if breadth deteriorates",
+      "stop": "TBD",
+      "target": "TBD",
+      "originalStop": "TBD",
+      "originalTakeProfit": "TBD",
+      "timeHorizon": "TBD until actionable setup",
+      "status": "Watch only",
+      "followUp": "Not a buy unless market turns more defensive and setup tightens.",
+      "category": "Watchlist",
+      "addedDate": "2026-06-18",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "LLY",
@@ -111,19 +127,19 @@
       "followUp": "No entry while below reclaim zone.",
       "category": "Watchlist",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     }
   ],
   "completedOrRemoved": [
     {
       "ticker": "NVDA",
       "outcome": "Triggered and executed: 147 shares at 211.08 on 2026-06-15 23:30 SGT",
-      "followUp": "Hold only; no further add unless NVDA reclaims 209.2/212.5 and QQQ >740.",
+      "followUp": "Hold only; no further add unless NVDA reclaims/holds 211.5-212.5 and QQQ >740.",
       "category": "Removed/Completed",
       "addedDate": "2026-06-12",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "QQQ",
@@ -131,17 +147,8 @@
       "followUp": "Removed; do not reopen without fresh breakdown.",
       "category": "Removed/Completed",
       "addedDate": "2026-06-12",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
-    },
-    {
-      "ticker": "AVGO",
-      "outcome": "Downgraded/removed after preferred setup failed and traded near stop zone",
-      "followUp": "Remove until reclaim/rebuild.",
-      "category": "Removed/Completed",
-      "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "TSLA",
@@ -149,8 +156,8 @@
       "followUp": "No action unless new setup forms or price breaks below 380.",
       "category": "Removed/Completed",
       "addedDate": "2026-06-17",
-      "lastReviewedAt": "2026-06-18 08:10 SGT",
-      "thesisUpdatedAt": "2026-06-18"
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     }
   ]
 }
