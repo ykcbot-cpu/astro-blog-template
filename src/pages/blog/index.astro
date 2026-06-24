@@ -1,12 +1,14 @@
 ---
-import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Blog';
 const description = 'Latest articles.';
 const permalink = `${Astro.site.href}blog`;
 
-let allPosts = await getCollection('posts')
+const postModules = import.meta.glob('../../data/blog-posts/*.md', { eager: true });
+let allPosts = Object.values(postModules).map((post) => ({
+  data: post.frontmatter,
+}));
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
 ---
 
