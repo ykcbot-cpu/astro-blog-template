@@ -1,11 +1,11 @@
 {
-  "asOf": "2026-06-17 08:50 SGT",
-  "regime": "Neutral / selective rotation",
+  "asOf": "2026-06-19 08:52 SGT",
+  "regime": "Neutral / improving, but not confirmed risk-on",
   "exposure": {
-    "longNotionalUsd": 242600,
-    "shortNotionalUsd": 34000,
-    "grossExposurePct": 27.7,
-    "netExposurePct": 20.9,
+    "longNotionalUsd": 248217.1,
+    "shortNotionalUsd": 32849,
+    "grossExposurePct": 28.1,
+    "netExposurePct": 21.5,
     "recommendedNetExposurePct": "20-25"
   },
   "positions": [
@@ -15,13 +15,19 @@
       "direction": "Long",
       "quantity": 150,
       "entryPrice": 335.6,
-      "lastPriceUsed": 351.73,
+      "lastPriceUsed": 357.64,
       "stop": 314,
       "target": 365,
-      "score": "9/10",
+      "originalStop": 314,
+      "originalTakeProfit": 365,
+      "timeHorizon": "4-10 weeks",
+      "score": "8/10",
       "status": "Active",
-      "thesis": "Intact",
-      "action": "Hold; consider trim near 360-365."
+      "thesis": "Intact, but near TP",
+      "action": "Hold; trim 75% at original TP 365 or renewed 360-365 rejection; keep 25% runner only if strength holds.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "JPM",
@@ -29,13 +35,19 @@
       "direction": "Long",
       "quantity": 160,
       "entryPrice": 313.41,
-      "lastPriceUsed": 331.14,
+      "lastPriceUsed": 325.22,
       "stop": 298,
       "target": 340,
-      "score": "9/10",
+      "originalStop": 298,
+      "originalTakeProfit": 340,
+      "timeHorizon": "4-8 weeks",
+      "score": "7/10",
       "status": "Active",
-      "thesis": "Intact / working",
-      "action": "Hold; no chase add before FOMC."
+      "thesis": "Intact, but rejected TP zone",
+      "action": "Hold; if not trimmed at 338-340, reduce on bounce toward 332-338. Review below 325, stronger review below 318-320.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "NVDA",
@@ -43,13 +55,19 @@
       "direction": "Long",
       "quantity": 440,
       "entryPrice": 206.63,
-      "lastPriceUsed": 207.41,
+      "lastPriceUsed": 210.69,
       "stop": 191,
       "target": 230,
-      "score": "5/10",
+      "originalStop": 191,
+      "originalTakeProfit": 230,
+      "timeHorizon": "4-10 weeks",
+      "score": "6/10",
       "status": "Active",
-      "thesis": "Yellow due QQQ and semi weakness",
-      "action": "Hold; no add unless NVDA reclaims 211.5-212.5 and QQQ reclaims 740."
+      "thesis": "Yellow improving",
+      "action": "Hold only; no add unless NVDA holds 211.5-212.5 and QQQ confirms above 740.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "SMH",
@@ -57,13 +75,19 @@
       "direction": "Long",
       "quantity": 74,
       "entryPrice": 605.6,
-      "lastPriceUsed": 616,
+      "lastPriceUsed": 654.11,
       "stop": 565,
       "target": 675,
-      "score": "5/10",
+      "originalStop": 565,
+      "originalTakeProfit": 675,
+      "timeHorizon": "4-10 weeks",
+      "score": "7/10",
       "status": "Active",
-      "thesis": "Yellow due semi weakness",
-      "action": "Hold; no add; watch 605/600."
+      "thesis": "Yellow improving",
+      "action": "Hold only; no add until QQQ closes above 740. At 675, trim 75% and keep 25% runner only if thesis remains intact.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     },
     {
       "ticker": "XLE",
@@ -71,13 +95,19 @@
       "direction": "Short hedge",
       "quantity": 614,
       "entryPrice": 57.09,
-      "lastPriceUsed": 55.36,
+      "lastPriceUsed": 53.5,
       "stop": 61,
       "target": 52.5,
+      "originalStop": 61,
+      "originalTakeProfit": 52.5,
+      "timeHorizon": "Hedge review cycle",
       "score": "8/10",
       "status": "Active",
       "thesis": "Intact hedge",
-      "action": "Hold short hedge; tighten if XLE reclaims 57.5-58."
+      "action": "Hold short hedge to 52.50; tighten if XLE reclaims 55.25-55.50; bigger thesis review at 57.5-58.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-19"
     }
   ],
   "recentlyClosed": [
@@ -88,8 +118,14 @@
       "entryPrice": 718.19,
       "exitPrice": 740.95,
       "exitDate": "2026-06-15 21:47 SGT",
+      "originalStop": 735,
+      "originalTakeProfit": 675,
+      "timeHorizon": "Hedge review cycle",
       "realizedPnlUsd": -1895.52,
-      "reason": "Stop breach / hedge thesis invalidated by tech strength."
+      "reason": "Stop breach / hedge thesis invalidated by tech strength.",
+      "addedDate": "2026-06-12",
+      "lastReviewedAt": "2026-06-19 08:52 SGT",
+      "thesisUpdatedAt": "2026-06-15"
     }
   ]
 }

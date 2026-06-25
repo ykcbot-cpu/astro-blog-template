@@ -1,0 +1,283 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import thesis from '../data/thesis.json';
+
+const title = 'Thesis';
+const description = 'Current KumoTrade holding and recommendation thesis notes.';
+const permalink = `${Astro.site.href}thesis`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="thesis">
+  <div class="container dashboard">
+    <header class="page-header">
+      <p class="eyebrow">As of {thesis.asOf}</p>
+      <h1>Thesis</h1>
+      <p class="summary">{thesis.summary}</p>
+    </header>
+
+    <section aria-label="Current thesis notes">
+      <h2 class="section-title">Active Thesis</h2>
+      <div class="thesis-grid">
+      {thesis.items.map((item) => (
+        <article class="thesis-card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">{item.type}</p>
+              <h2>{item.ticker}</h2>
+              <p class="name">{item.name}</p>
+            </div>
+            <div class="score">
+              <span>{item.score}</span>
+              <small>{item.status}</small>
+            </div>
+          </div>
+
+          <dl>
+            <div>
+              <dt>Added</dt>
+              <dd>{item.addedDate}</dd>
+            </div>
+            <div>
+              <dt>Thesis Initiated</dt>
+              <dd>{item.thesisInitiatedDate}</dd>
+            </div>
+            <div>
+              <dt>Last Reviewed</dt>
+              <dd>{item.lastReviewedAt}</dd>
+            </div>
+            <div>
+              <dt>Thesis Last Updated</dt>
+              <dd>{item.thesisUpdatedAt}</dd>
+            </div>
+            <div>
+              <dt>Position</dt>
+              <dd>{item.position}</dd>
+            </div>
+            <div>
+              <dt>Core Thesis</dt>
+              <dd>{item.coreThesis}</dd>
+            </div>
+            <div>
+              <dt>Why We Hold / Watch</dt>
+              <dd>{item.whyWeHold}</dd>
+            </div>
+            <div>
+              <dt>Catalysts</dt>
+              <dd>{item.catalysts}</dd>
+            </div>
+            <div>
+              <dt>Risks</dt>
+              <dd>{item.risks}</dd>
+            </div>
+            <div>
+              <dt>Levels</dt>
+              <dd>{item.levels}</dd>
+            </div>
+            <div>
+              <dt>Original Stop</dt>
+              <dd>{item.originalStop}</dd>
+            </div>
+            <div>
+              <dt>Original Take Profit</dt>
+              <dd>{item.originalTakeProfit}</dd>
+            </div>
+            <div>
+              <dt>Time Horizon</dt>
+              <dd>{item.timeHorizon}</dd>
+            </div>
+            <div>
+              <dt>Action</dt>
+              <dd>{item.action}</dd>
+            </div>
+          </dl>
+        </article>
+      ))}
+      </div>
+    </section>
+
+    <section aria-label="Invalidated or expired thesis notes">
+      <h2 class="section-title">Invalidated / Expired Thesis</h2>
+      <div class="thesis-grid inactive-grid">
+      {thesis.inactiveItems.map((item) => (
+        <article class="thesis-card inactive-card">
+          <div class="card-header">
+            <div>
+              <p class="eyebrow">{item.type}</p>
+              <h2>{item.ticker}</h2>
+              <p class="name">{item.name}</p>
+            </div>
+            <div class="score">
+              <span>{item.score}</span>
+              <small>{item.status}</small>
+            </div>
+          </div>
+
+          <dl>
+            <div>
+              <dt>Inactive Reason</dt>
+              <dd>{item.inactiveReason}</dd>
+            </div>
+            <div>
+              <dt>Added</dt>
+              <dd>{item.addedDate}</dd>
+            </div>
+            <div>
+              <dt>Thesis Initiated</dt>
+              <dd>{item.thesisInitiatedDate}</dd>
+            </div>
+            <div>
+              <dt>Last Reviewed</dt>
+              <dd>{item.lastReviewedAt}</dd>
+            </div>
+            <div>
+              <dt>Thesis Last Updated</dt>
+              <dd>{item.thesisUpdatedAt}</dd>
+            </div>
+            <div>
+              <dt>Position</dt>
+              <dd>{item.position}</dd>
+            </div>
+            <div>
+              <dt>Core Thesis</dt>
+              <dd>{item.coreThesis}</dd>
+            </div>
+            <div>
+              <dt>Levels</dt>
+              <dd>{item.levels}</dd>
+            </div>
+            <div>
+              <dt>Original Stop</dt>
+              <dd>{item.originalStop}</dd>
+            </div>
+            <div>
+              <dt>Original Take Profit</dt>
+              <dd>{item.originalTakeProfit}</dd>
+            </div>
+            <div>
+              <dt>Time Horizon</dt>
+              <dd>{item.timeHorizon}</dd>
+            </div>
+            <div>
+              <dt>Action</dt>
+              <dd>{item.action}</dd>
+            </div>
+          </dl>
+        </article>
+      ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .dashboard {
+    max-width: 80em;
+  }
+
+  .page-header {
+    margin: 2rem 0;
+  }
+
+  .eyebrow,
+  .summary,
+  .name,
+  dt,
+  dd,
+  .score {
+    font-family: var(--font-family-sans);
+  }
+
+  .eyebrow,
+  .summary,
+  .name,
+  dt {
+    color: var(--text-secondary);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .eyebrow {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .summary {
+    max-width: 62rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+    margin: 2rem 0 1rem;
+  }
+
+  .thesis-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .thesis-card {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 8px;
+    padding: 1.2rem;
+  }
+
+  .inactive-card {
+    background: rgba(84, 142, 155, 0.06);
+  }
+
+  .card-header {
+    align-items: flex-start;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .card-header h2 {
+    font-size: 2rem;
+    margin: 0.1rem 0 0;
+  }
+
+  .score {
+    text-align: right;
+  }
+
+  .score span {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .score small {
+    color: var(--text-secondary);
+    display: block;
+    max-width: 10rem;
+  }
+
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  dl {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  dt {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  dd {
+    line-height: 1.55;
+  }
+
+  @media (max-width: 900px) {
+    .thesis-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
