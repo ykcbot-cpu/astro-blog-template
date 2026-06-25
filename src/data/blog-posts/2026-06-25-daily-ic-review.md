@@ -2,7 +2,7 @@
 title: Daily IC Review - 25 Jun 2026
 slug: daily-ic-review-2026-06-25
 publishDate: 25 Jun 2026
-description: KumoTrade daily investment committee update covering the GE take-profit, forced two-trade redeployment, LLY long, TSLA short hedge, and risk controls while QQQ remains broken.
+description: KumoTrade daily investment committee update covering the GE take-profit, forced two-trade redeployment, pre-market QQQ repair, LLY long, conditional TSLA short hedge, and updated risk controls.
 ---
 
 ## Executive Decision
@@ -14,11 +14,12 @@ QQQ remains below the repair zone and SPY remains close to the 730 de-risk line.
 Updated action:
 
 - GE 75% take-profit executed: sold 113 shares at 365.09.
-- Keep the remaining 37 GE shares as a runner with a 354 stop.
+- Keep the remaining 37 GE shares as a runner, with the stop raised to 360 after the pre-market strength.
 - Add LLY as the forced quality long, sized medium rather than full because it has not reclaimed 1,137.
-- Add TSLA short as the forced second trade and hedge against weak QQQ / high-beta growth.
+- Add TSLA short as the forced second trade only if TSLA stays below 378 after the open or QQQ fails to hold 725-726.
 - Keep XLE short hedge because it is still working.
-- Keep NVDA and SMH on reduced-risk watch; do not let the new TSLA hedge become an excuse to ignore NVDA weakness.
+- Pause the automatic NVDA cut after the pre-market reclaim of 200, but sell another 110 shares if NVDA rejects 204-205 and falls back below 200.
+- Keep SMH as a recovered runner, with the stop raised to 620.
 
 ## Executed GE Take-Profit
 
@@ -39,7 +40,7 @@ GE did its job. The position moved from a core winner to a residual runner. From
 Runner plan:
 
 - Hold 37 shares.
-- Stop: 354.
+- Stop: 360.
 - Reassess if GE closes back below 360 after failing to reclaim it.
 - Do not re-add unless the broader market repairs and GE resets cleanly.
 
@@ -68,15 +69,42 @@ Portfolio implication:
 - Prefer long quality / defensive growth plus a short high-beta hedge.
 - Keep the portfolio net exposure controlled until QQQ reclaims at least 720-724, then 732-733.
 
+## Pre-Market Update
+
+As at the 25 Jun 2026 pre-market snapshot provided by KC, the tape improved from the earlier post-market review but did not fully repair.
+
+| Symbol | Pre-Market Price | Read |
+| --- | ---: | --- |
+| SPY | 738.53 | Better, above 730 danger line, but still below 750 risk-on |
+| QQQ | 725.80 | Reclaimed the 720-724 first repair zone, but still below 732-733 real repair |
+| VIX | N/A from broker; about 18.09 spot / 18.67 futures observed | Better, but still around the no-adds line |
+| USO | 105.52 | Energy/oil weakness still supports the XLE short |
+| XLE | 53.18 | Hedge still working; near the 52.50 partial-cover target |
+| NVDA | 202.02 | Reclaimed 200; pause the automatic cut, but still needs 204-205 |
+| JPM | 334.79 | Close to trim zone, but not quite 336-340 yet |
+| GE | 366.82 | Confirms the 75% TP was correct; hold runner with tighter stop |
+| SMH | 646.66 | Strong rebound; hold runner and raise stop |
+| LLY | 1,116.33 | Acceptable for the 25-share forced long, below the 1,120 limit |
+| TSLA | 377.77 | Conditional short only; cancel if QQQ repairs and TSLA holds above 380 |
+
+Premarket decision:
+
+- Buy 25 LLY at 1,120 or better.
+- Short 70 TSLA only if TSLA is below 378 after the open or QQQ fails 725-726.
+- Do not auto-sell NVDA at the open while it holds above 200.
+- Raise SMH stop to 620.
+- Raise GE runner stop to 360.
+- Keep XLE short, with a 300-share partial cover near 52.50.
+
 ## Current Holdings Review
 
 | Name | Position | Price Used | Daily Score | Deterioration | Action |
 | --- | --- | ---: | ---: | --- | --- |
-| GE | Long 37 after trim | 365.09 execution | 8/10 | None | Hold runner, stop 354 |
+| GE | Long 37 after trim | 366.82 pre-market | 8/10 | None | Hold runner, stop 360 |
 | JPM | Long 160 | 333.45 | 7/10 | Yellow-lite | Hold; trim 100-120 shares at 336-340 |
 | XLE | Short 614 | 53.57 | 8/10 | None | Hold; cover half near 52.50 |
-| NVDA | Long 330 | 199.00 | 3/10 | Orange, near Red below 197 | Reduce another 110 if 200 is not reclaimed |
-| SMH | Long 37 | 618.92 | 4/10 | Orange watch | Hold only above 605 |
+| NVDA | Long 330 | 202.02 pre-market | 4/10 | Orange improving above 200 | Hold above 200; reduce if 204-205 rejects and 200 fails |
+| SMH | Long 37 | 646.66 pre-market | 5/10 | Orange improving | Hold above 620 |
 
 ### Factor Scores
 
@@ -136,11 +164,11 @@ Daily Score: **6/10**
 | Target 2 | 345 |
 | Risk | About 1,150 |
 | Holding period | 1-4 weeks |
-| Invalidation | TSLA reclaims 392 or QQQ repairs above 732-733 with risk appetite improving |
+| Invalidation | TSLA reclaims 392 or QQQ repairs above 732-733 with TSLA above 380 |
 
 Reason:
 
-TSLA is the better forced second trade than another long because it offsets the remaining NVDA / SMH / QQQ risk. It is high beta, liquid, and close enough to the 373 breakdown area to work as a tactical hedge. The main risk is squeeze behavior, so size must stay controlled.
+TSLA is the better forced second trade than another long because it offsets the remaining NVDA / SMH / QQQ risk. However, the pre-market QQQ repair changes the execution. The short should be conditional: enter only if TSLA remains below 378 after the open or QQQ fails to hold 725-726. If QQQ reclaims 732-733 and TSLA holds above 380, cancel the short rather than fighting a tech repair.
 
 Daily Score as short: **6/10**
 
@@ -168,25 +196,25 @@ This is the right compromise: lower cash drag, higher gross opportunity, but con
 
 | Name | Position | Status | Action |
 | --- | --- | --- | --- |
-| GE | Long 37 | Runner after TP | Hold above 354 |
+| GE | Long 37 | Runner after TP | Hold above 360 |
 | JPM | Long 160 | Core hold / TP watch | Trim 100-120 at 336-340 |
 | XLE | Short 614 | Working hedge | Hold; cover half near 52.50 |
-| NVDA | Long 330 | Weakest active holding | Sell another 110 if below 200 / fails to reclaim 200 |
-| SMH | Long 37 | Small runner | Hold only above 605 |
+| NVDA | Long 330 | Weak but improved pre-market | Hold above 200; sell 110 if 204-205 rejects and 200 fails |
+| SMH | Long 37 | Recovered runner | Hold above 620 |
 | LLY | New long 25 | Forced quality long | Buy 1,117-1,120 limit |
-| TSLA | New short 70 | Forced hedge trade | Short around 375-376 |
+| TSLA | Conditional short 70 | Forced hedge trade | Short only below 378 / QQQ fails 725-726 |
 
 ## Consolidated Shortlist
 
---- SHORTLIST AS AT 2026-06-25 12:30 SGT ---
+--- SHORTLIST AS AT 2026-06-25 PRE-MARKET ---
 RANK | NAME | TYPE | DAILY SCORE | THESIS STATUS | INERTIA | ACTION
 1 | XLE | Short Hedge | 8/10 | Intact | Yes | Hold; cover half near 52.50
-2 | GE | Runner After TP | 8/10 | Intact | Yes | Hold 37 shares above 354
+2 | GE | Runner After TP | 8/10 | Intact | Yes | Hold 37 shares above 360
 3 | JPM | Hold / TP Watch | 7/10 | Intact / Yellow-lite | Yes | Hold; trim 100-120 shares at 336-340
 4 | LLY | New Long | 6/10 | Early but intact | No | Buy 25 shares at 1,117-1,120
-5 | TSLA | New Short Hedge | 6/10 | Tactical hedge | No | Short 70 shares around 375-376
-6 | SMH | Small Runner | 4/10 | Orange watch | Partial | Hold 37 only above 605
-7 | NVDA | Reduce | 3/10 | Orange, near Red below 197 | No | Sell another 110 unless 200 is reclaimed quickly
+5 | TSLA | Conditional Short Hedge | 6/10 | Tactical hedge | No | Short 70 only below 378 / QQQ fails 725-726
+6 | SMH | Recovered Runner | 5/10 | Orange improving | Partial | Hold 37 above 620
+7 | NVDA | Hold / Reduce Watch | 4/10 | Orange improving above 200 | Partial | Hold above 200; reduce if 204-205 rejects and 200 fails
 8 | MSFT | Watch Only | 5/10 | Market unconfirmed | No | Needs 375/379 reclaim
 9 | AMZN | Watch Only | 4/10 | Market unconfirmed | No | No entry below 244/248.50
 10 | SMCI | Hedge Watch | 5/10 | Weak setup | No | Only consider short below 31.40-32.00
@@ -197,13 +225,14 @@ RANK | NAME | TYPE | DAILY SCORE | THESIS STATUS | INERTIA | ACTION
 Before the US open:
 
 1. Confirm SPY is above 730.
-2. Confirm QQQ is not breaking below 705.
-3. Place LLY limit around 1,117-1,120 for 25 shares.
-4. Place TSLA short around 375-376 for 70 shares.
-5. Keep GE runner stop at 354.
-6. Keep SMH review at 605.
-7. If NVDA opens below 200 and cannot reclaim it in the first 30-60 minutes, sell another 110 shares.
-8. Keep XLE short while below 55.25-55.50; cover half near 52.50.
+2. Confirm QQQ is holding 725-726 and still below 732-733.
+3. Place LLY limit at 1,120 or better for 25 shares.
+4. Short 70 TSLA only if TSLA is below 378 after the open or QQQ fails 725-726.
+5. Keep GE runner stop at 360.
+6. Keep SMH stop at 620.
+7. Hold NVDA while above 200; sell another 110 only if it rejects 204-205 and loses 200.
+8. Keep XLE short while below 55.25-55.50; cover 300 shares near 52.50.
+9. Place JPM trim order for 100 shares at 336.50-340.
 
 ## Risk Controls
 
@@ -211,6 +240,7 @@ Portfolio-level:
 
 - If SPY loses 730, reduce gross exposure by another 25%.
 - If QQQ loses 705, exit SMH runner and reduce NVDA more aggressively.
+- If QQQ fails 725-726 after the pre-market improvement, the TSLA short trigger is live.
 - If VIX moves above 21, stop adding and cut risk.
 - If QQQ reclaims 720-724, pressure eases but the market is not risk-on.
 - If QQQ reclaims 732-733, reassess the TSLA short.
@@ -219,10 +249,10 @@ Portfolio-level:
 Position-level:
 
 - LLY: stop 1,088; do not average down while QQQ is broken.
-- TSLA short: stop 392; keep size controlled because squeeze risk is real.
-- NVDA: below 197 is near-Red deterioration; reduce again even with TSLA hedge.
-- SMH: below 605 removes the runner case.
-- GE: below 354 stops the residual runner.
+- TSLA short: stop 392; keep size controlled because squeeze risk is real; cancel if QQQ repairs above 732-733 and TSLA holds above 380.
+- NVDA: hold above 200 after the pre-market reclaim; reduce again if 204-205 rejects and 200 fails.
+- SMH: below 620 removes the recovered runner case.
+- GE: below 360 stops the residual runner.
 - XLE short: above 55.25-55.50 tighten; above 57.50-58.00 review thesis.
 
-Bottom line: the cash redeployment is approved, but the structure matters. Use the GE profit to add one quality long and one tactical hedge. LLY plus TSLA short reduces cash drag without pretending that QQQ has repaired.
+Bottom line: the pre-market tape improved enough to pause the automatic NVDA cut, but not enough to declare risk-on. Buy LLY if available below 1,120. Keep TSLA short conditional on TSLA below 378 or QQQ failing 725-726. Let GE and SMH run with tighter stops, and keep XLE working toward the 52.50 partial-cover level.
