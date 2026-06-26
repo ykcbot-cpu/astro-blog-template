@@ -1,16 +1,15 @@
 {
-  "asOf": "2026-06-17 08:50 SGT",
+  "asOf": "2026-06-26 14:25 SGT",
   "items": [
-    { "rank": 1, "name": "GE", "type": "Hold", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; trim near 360-365" },
-    { "rank": 2, "name": "JPM", "type": "Hold", "score": "9/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold; no chase add before FOMC" },
-    { "rank": 3, "name": "XLE", "type": "Short hedge", "score": "8/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold short hedge; tighten if 57.5-58 reclaim" },
-    { "rank": 4, "name": "GOOGL", "type": "Watch", "score": "7/10", "thesisStatus": "Intact", "inertia": "No", "action": "Conditional only if holds 373 and QQQ stabilizes" },
-    { "rank": 5, "name": "NVDA", "type": "Hold", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold; no add unless above 211.5-212.5 and QQQ above 740" },
-    { "rank": 6, "name": "SMH", "type": "Hold", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold; watch 605/600" },
-    { "rank": 7, "name": "AMZN", "type": "Watch", "score": "6/10", "thesisStatus": "Intact", "inertia": "No", "action": "Buy only 242-244 hold or above 248.5 reclaim" },
-    { "rank": 8, "name": "XLI/CAT", "type": "Watch", "score": "6/10", "thesisStatus": "Intact but extended", "inertia": "No", "action": "No chase" },
-    { "rank": 9, "name": "LLY", "type": "Watch", "score": "5/10", "thesisStatus": "Yellow", "inertia": "No", "action": "No entry unless 1135-1137 hold" },
-    { "rank": 10, "name": "AVGO", "type": "Removed/Wait", "score": "4/10", "thesisStatus": "Setup weakened", "inertia": "No", "action": "Remove until reclaim/rebuild" },
-    { "rank": 11, "name": "TSLA", "type": "Removed", "score": "N/A", "thesisStatus": "Old short invalidated", "inertia": "No", "action": "No action unless new setup or below 380" }
+    { "rank": 1, "name": "GE", "type": "Hold runner", "score": "8/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold 37; stop 365; target 380/390" },
+    { "rank": 2, "name": "XLE", "type": "Short hedge", "score": "7/10", "thesisStatus": "Yellow oil bounce", "inertia": "Yes", "action": "Hold below 55.50; cover 300 near 52.50" },
+    { "rank": 3, "name": "JPM", "type": "Hold runner", "score": "7/10", "thesisStatus": "Yellow-lite", "inertia": "Yes", "action": "Hold 40; sell 20 at 340-343; stop 332" },
+    { "rank": 4, "name": "SMH", "type": "Hold runner", "score": "6/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold 37 above 620; exit if QQQ loses 705" },
+    { "rank": 5, "name": "TSLA", "type": "Short hedge", "score": "6/10", "thesisStatus": "Intact", "inertia": "Partial", "action": "Hold short below 380; target 360/345" },
+    { "rank": 6, "name": "LLY", "type": "Hold / watch", "score": "6/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold 25; stop 1088; add only above 1137 with market support" },
+    { "rank": 7, "name": "NVDA", "type": "Reduce / exit candidate", "score": "3/10", "thesisStatus": "Orange near Red", "inertia": "No", "action": "Sell 110 now; sell all if <195 or QQQ fails" },
+    { "rank": 8, "name": "CAT/XLI", "type": "Watch only", "score": "8/10", "thesisStatus": "Strong but extended", "inertia": "No", "action": "No chase; wait for pullback" },
+    { "rank": 9, "name": "MU/QCOM/WDC", "type": "Watch only", "score": "6/10", "thesisStatus": "Narrow semi bounce", "inertia": "No", "action": "No chase after gap/fade" },
+    { "rank": 10, "name": "AMZN/MSFT/GOOGL/AVGO", "type": "Avoid / watch", "score": "4-5/10", "thesisStatus": "Market unconfirmed", "inertia": "No", "action": "No buy while QQQ below 732-733" }
   ]
 }
