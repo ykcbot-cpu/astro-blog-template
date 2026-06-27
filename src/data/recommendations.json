@@ -1,16 +1,7 @@
 {
-  "asOf": "2026-06-26 14:25 SGT",
-  "summary": "Stay defensive. Main action is to reduce NVDA, protect GE/JPM runners, hold TSLA and XLE hedges only while levels hold, and avoid new broad buys until QQQ reclaims 720-724 and then 732-733.",
+  "asOf": "2026-06-27 weekly review / 26 Jun US close",
+  "summary": "Stay defensive. NVDA has been fully closed, exposure is light, and the next action is to protect GE/JPM/LLY runners while holding TSLA and XLE hedges only while levels hold. Avoid new broad buys until QQQ reclaims 720-724 and then 732-733.",
   "active": [
-    {
-      "ticker": "NVDA",
-      "recommendation": "Reduce / exit candidate",
-      "trigger": "Sell 110 now; sell all if NVDA is below 195 or QQQ fails 716 / 705",
-      "stop": "195",
-      "target": "230 only if setup recovers",
-      "status": "Orange near Red",
-      "followUp": "Weakest active holding; no add."
-    },
     {
       "ticker": "GE",
       "recommendation": "Hold runner",
@@ -22,27 +13,27 @@
     },
     {
       "ticker": "JPM",
-      "recommendation": "Hold runner / trim",
-      "trigger": "Sell 20 shares into 340-343",
+      "recommendation": "Hold runner / reduce if weak",
+      "trigger": "Hold only if it reclaims 332; otherwise reduce or exit",
       "stop": "332",
       "target": "340-343",
       "status": "Yellow-lite",
-      "followUp": "Keep 20-share residual runner if trim fills."
+      "followUp": "Do not let the runner turn into thesis anchoring below the review level."
     },
     {
       "ticker": "LLY",
       "recommendation": "Hold only",
-      "trigger": "Add only above 1137 with market support",
-      "stop": "1088",
-      "target": "1170 / 1200",
-      "status": "Yellow",
-      "followUp": "Do not average down while QQQ is weak."
+      "trigger": "Hold after breakout; do not chase/add after the sharp move",
+      "stop": "1165-1175 review zone",
+      "target": "1230",
+      "status": "Strengthened",
+      "followUp": "Treat as defensive-growth exception, not permission to add broad risk."
     },
     {
       "ticker": "SMH",
       "recommendation": "Hold runner",
-      "trigger": "Hold only above 620",
-      "stop": "620",
+      "trigger": "Hold only above 605-607",
+      "stop": "605",
       "target": "650 / 675",
       "status": "Yellow",
       "followUp": "Exit if QQQ loses 705."
@@ -53,8 +44,8 @@
       "trigger": "Hold only while below 380",
       "stop": "380",
       "target": "360 / 345",
-      "status": "Intact",
-      "followUp": "Cover if TSLA closes above 380 or QQQ reclaims 720-724."
+      "status": "Fragile near stop",
+      "followUp": "Cover if TSLA holds above 380 or QQQ repairs above 720-724."
     },
     {
       "ticker": "XLE",
@@ -62,11 +53,16 @@
       "trigger": "Hold below 55.50",
       "stop": "55.50 / 57.50",
       "target": "52.50",
-      "status": "Yellow after oil bounce",
+      "status": "Intact",
       "followUp": "Cover 300 near 52.50; cover 300 above 55.50; exit remainder above 57.50."
     }
   ],
   "completedOrRemoved": [
+    {
+      "ticker": "NVDA",
+      "outcome": "Closed 220 shares at 193.88 on 2026-06-26 22:34 SGT",
+      "followUp": "Do not re-enter unless NVDA reclaims 195/200 and QQQ repairs."
+    },
     {
       "ticker": "GE",
       "outcome": "Triggered and executed: sold 113 shares at 365.09 on 2026-06-25 SGT",
@@ -75,7 +71,7 @@
     {
       "ticker": "JPM",
       "outcome": "Triggered 75% take-profit; current holding is 40-share runner",
-      "followUp": "Sell 20 at 340-343 if offered."
+      "followUp": "Hold only if it reclaims 332; otherwise reduce or exit."
     },
     {
       "ticker": "QQQ",
