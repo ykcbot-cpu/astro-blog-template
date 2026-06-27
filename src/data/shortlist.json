@@ -1,15 +1,15 @@
 {
-  "asOf": "2026-06-26 14:25 SGT",
+  "asOf": "2026-06-27 weekly review / 26 Jun US close",
   "items": [
-    { "rank": 1, "name": "GE", "type": "Hold runner", "score": "8/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold 37; stop 365; target 380/390" },
-    { "rank": 2, "name": "XLE", "type": "Short hedge", "score": "7/10", "thesisStatus": "Yellow oil bounce", "inertia": "Yes", "action": "Hold below 55.50; cover 300 near 52.50" },
-    { "rank": 3, "name": "JPM", "type": "Hold runner", "score": "7/10", "thesisStatus": "Yellow-lite", "inertia": "Yes", "action": "Hold 40; sell 20 at 340-343; stop 332" },
-    { "rank": 4, "name": "SMH", "type": "Hold runner", "score": "6/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold 37 above 620; exit if QQQ loses 705" },
-    { "rank": 5, "name": "TSLA", "type": "Short hedge", "score": "6/10", "thesisStatus": "Intact", "inertia": "Partial", "action": "Hold short below 380; target 360/345" },
-    { "rank": 6, "name": "LLY", "type": "Hold / watch", "score": "6/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Hold 25; stop 1088; add only above 1137 with market support" },
-    { "rank": 7, "name": "NVDA", "type": "Reduce / exit candidate", "score": "3/10", "thesisStatus": "Orange near Red", "inertia": "No", "action": "Sell 110 now; sell all if <195 or QQQ fails" },
-    { "rank": 8, "name": "CAT/XLI", "type": "Watch only", "score": "8/10", "thesisStatus": "Strong but extended", "inertia": "No", "action": "No chase; wait for pullback" },
-    { "rank": 9, "name": "MU/QCOM/WDC", "type": "Watch only", "score": "6/10", "thesisStatus": "Narrow semi bounce", "inertia": "No", "action": "No chase after gap/fade" },
+    { "rank": 1, "name": "LLY", "type": "Hold / defensive growth", "score": "7.5/10", "thesisStatus": "Strengthened", "inertia": "Yes", "action": "Hold 25; tighten review to 1165-1175; do not chase/add" },
+    { "rank": 2, "name": "XLE", "type": "Short hedge", "score": "7/10", "thesisStatus": "Intact below 55.50", "inertia": "Yes", "action": "Hold below 55.50; cover 300 near 52.50" },
+    { "rank": 3, "name": "GE", "type": "Hold runner", "score": "7/10", "thesisStatus": "Intact, extended", "inertia": "Yes", "action": "Hold 37 above 365; no re-add" },
+    { "rank": 4, "name": "JPM", "type": "Hold / reduce if weak", "score": "6/10", "thesisStatus": "Yellow-lite", "inertia": "Partial", "action": "Hold only if it reclaims 332; otherwise reduce/exit" },
+    { "rank": 5, "name": "TSLA", "type": "Short hedge", "score": "5.5/10", "thesisStatus": "Fragile near stop", "inertia": "Partial", "action": "Hold short below 380; cover if above 380 or QQQ repairs" },
+    { "rank": 6, "name": "SMH", "type": "Conditional runner", "score": "5/10", "thesisStatus": "Yellow, QQQ-dependent", "inertia": "Partial", "action": "Hold above 605-607; exit if QQQ loses 705" },
+    { "rank": 7, "name": "NVDA", "type": "Closed", "score": "N/A", "thesisStatus": "Failed setup removed", "inertia": "No", "action": "Do not re-enter unless NVDA reclaims 195/200 and QQQ repairs" },
+    { "rank": 8, "name": "CAT/XLI", "type": "Watch only", "score": "7/10", "thesisStatus": "Strong but extended", "inertia": "No", "action": "No chase; GE already expresses industrial strength" },
+    { "rank": 9, "name": "XLV / healthcare", "type": "Watch", "score": "6.5/10", "thesisStatus": "Defensive quality", "inertia": "No", "action": "Prefer pullback entries; LLY already expresses theme" },
     { "rank": 10, "name": "AMZN/MSFT/GOOGL/AVGO", "type": "Avoid / watch", "score": "4-5/10", "thesisStatus": "Market unconfirmed", "inertia": "No", "action": "No buy while QQQ below 732-733" }
   ]
 }

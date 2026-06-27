@@ -1,11 +1,11 @@
 {
-  "asOf": "2026-06-26 14:25 SGT",
+  "asOf": "2026-06-27 weekly review / 26 Jun US close",
   "regime": "Neutral / risk-off warning",
   "exposure": {
-    "longNotionalUsd": 121214,
-    "shortNotionalUsd": 59422,
-    "grossExposurePct": 18.1,
-    "netExposurePct": 6.2,
+    "longNotionalUsd": 79648,
+    "shortNotionalUsd": 59588,
+    "grossExposurePct": 13.9,
+    "netExposurePct": 2.0,
     "recommendedNetExposurePct": "0-10"
   },
   "positions": [
@@ -15,13 +15,13 @@
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 335.62,
-      "lastPriceUsed": 371.36,
+      "lastPriceUsed": 369,
       "stop": 365,
       "target": 380,
-      "score": "8/10",
+      "score": "7/10",
       "status": "Runner",
-      "thesis": "Intact",
-      "action": "Hold runner; stop 365; target 380 then 390."
+      "thesis": "Intact, extended",
+      "action": "Hold runner above 365 only; no re-add."
     },
     {
       "ticker": "JPM",
@@ -29,13 +29,13 @@
       "direction": "Long",
       "quantity": 40,
       "entryPrice": 313.43,
-      "lastPriceUsed": 335.12,
+      "lastPriceUsed": 329.05,
       "stop": 332,
       "target": 340,
-      "score": "7/10",
+      "score": "6/10",
       "status": "Runner",
-      "thesis": "Yellow-lite after intraday rejection near 343",
-      "action": "Hold runner; sell 20 at 340-343; stop 332."
+      "thesis": "Yellow-lite; momentum weaker below 332 reference",
+      "action": "Hold only if it reclaims 332; otherwise reduce or exit."
     },
     {
       "ticker": "LLY",
@@ -43,27 +43,13 @@
       "direction": "Long",
       "quantity": 25,
       "entryPrice": 1115.12,
-      "lastPriceUsed": 1127.69,
-      "stop": 1088,
-      "target": 1170,
-      "score": "6/10",
+      "lastPriceUsed": 1208.12,
+      "stop": 1165,
+      "target": 1230,
+      "score": "7.5/10",
       "status": "Active",
-      "thesis": "Yellow until 1135-1137 reclaim",
-      "action": "Hold only; add only above 1137 with market support."
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA",
-      "direction": "Long",
-      "quantity": 220,
-      "entryPrice": 208.88,
-      "lastPriceUsed": 195.74,
-      "stop": 195,
-      "target": 230,
-      "score": "3/10",
-      "status": "Reduce / exit candidate",
-      "thesis": "Orange, near Red below 197 and 200",
-      "action": "Sell 110 now; sell all if below 195 or QQQ fails."
+      "thesis": "Strengthened after 1137 reclaim and sharp breakout",
+      "action": "Hold; tighten review to 1165-1175 after the spike; do not chase/add."
     },
     {
       "ticker": "SMH",
@@ -71,13 +57,13 @@
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 605.64,
-      "lastPriceUsed": 636.88,
-      "stop": 620,
+      "lastPriceUsed": 611.61,
+      "stop": 605,
       "target": 650,
-      "score": "6/10",
+      "score": "5/10",
       "status": "Runner",
       "thesis": "Yellow while QQQ remains weak",
-      "action": "Hold above 620; exit if QQQ loses 705."
+      "action": "Hold only above 605-607; exit if QQQ loses 705."
     },
     {
       "ticker": "TSLA",
@@ -85,13 +71,13 @@
       "direction": "Short hedge",
       "quantity": 70,
       "entryPrice": 375.88,
-      "lastPriceUsed": 375.12,
+      "lastPriceUsed": 379.71,
       "stop": 380,
       "target": 360,
-      "score": "6/10",
+      "score": "5.5/10",
       "status": "Active hedge",
-      "thesis": "Intact below 380",
-      "action": "Hold short below 380; cover if QQQ reclaims 720-724."
+      "thesis": "Fragile near 380 danger line",
+      "action": "Hold short only below 380; cover if TSLA holds above 380 or QQQ repairs."
     },
     {
       "ticker": "XLE",
@@ -99,16 +85,26 @@
       "direction": "Short hedge",
       "quantity": 613,
       "entryPrice": 57.08,
-      "lastPriceUsed": 54.09,
+      "lastPriceUsed": 53.84,
       "stop": 55.5,
       "target": 52.5,
       "score": "7/10",
       "status": "Active hedge",
-      "thesis": "Yellow after oil bounce",
+      "thesis": "Intact below 55.50",
       "action": "Hold below 55.50; cover 300 near 52.50; exit remainder above 57.50."
     }
   ],
   "recentlyClosed": [
+    {
+      "ticker": "NVDA",
+      "direction": "Long exit",
+      "quantity": 220,
+      "entryPrice": 208.88,
+      "exitPrice": 193.88,
+      "exitDate": "2026-06-26 22:34 SGT",
+      "realizedPnlUsd": -3300,
+      "reason": "Failed setup removed after NVDA broke the 195/197 danger zone."
+    },
     {
       "ticker": "QQQ",
       "direction": "Short hedge",
