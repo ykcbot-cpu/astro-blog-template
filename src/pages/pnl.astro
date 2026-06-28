@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import holdings from '../data/holdings.json';
+
+const title = 'P&L';
+const description = 'KumoTrade portfolio performance and P&L summary.';
+const permalink = `${Astro.site.href}pnl`;
+---
+
+<BaseLayout title={title} description={description} permalink={permalink} current="pnl">
+  <div class="container pnl-page">
+    <header class="page-header">
+      <p class="eyebrow">As of {holdings.asOf}</p>
+      <h1>P&L</h1>
+      <p class="summary">
+        Placeholder page for the upcoming P&L section. The Home dashboard currently shows portfolio
+        performance since IC start until the US investment skill produces a formal YTD performance field.
+      </p>
+    </header>
+
+    <section class="metrics" aria-label="Performance summary">
+      <div>
+        <span>Portfolio performance</span>
+        <strong>+0.4%</strong>
+        <p>Since IC start; temporary label.</p>
+      </div>
+      <div>
+        <span>Gross exposure</span>
+        <strong>{holdings.exposure.grossExposurePct}%</strong>
+        <p>Current book size.</p>
+      </div>
+      <div>
+        <span>Net exposure</span>
+        <strong>{holdings.exposure.netExposurePct}%</strong>
+        <p>Current directional exposure.</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .pnl-page {
+    max-width: 72em;
+  }
+
+  .page-header {
+    margin: 2rem 0;
+  }
+
+  .eyebrow,
+  .summary,
+  .metrics span,
+  .metrics p {
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+  }
+
+  .eyebrow {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .summary {
+    max-width: 58rem;
+    text-transform: none;
+  }
+
+  .metrics {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 2rem 0;
+  }
+
+  .metrics div {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 8px;
+    min-height: 160px;
+    padding: 1rem;
+  }
+
+  .metrics span {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .metrics strong {
+    display: block;
+    font-family: var(--font-family-sans);
+    font-size: 2rem;
+    margin-top: 0.4rem;
+  }
+
+  .metrics p {
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 1rem 0 0;
+  }
+
+  @media (max-width: 760px) {
+    .metrics {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
