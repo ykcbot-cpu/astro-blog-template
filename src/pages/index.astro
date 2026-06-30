@@ -1,99 +1,201 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import holdings from '../data/holdings.json';
+import recommendations from '../data/recommendations.json';
+import shortlist from '../data/shortlist.json';
 
-const title = 'My Astro Blog';
-const description = 'The perfect starter for your perfect blog.';
+const title = 'KumoTrade';
+const description = 'KumoTrade portfolio dashboard, latest investment committee posture, and current action board.';
 const permalink = Astro.site.href;
+
+const postModules = import.meta.glob('../data/blog-posts/*.md', { eager: true });
+const latestPost = Object.values(postModules)
+  .map((post) => post.frontmatter)
+  .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())[0];
+
+const latestAction = recommendations.completedOrRemoved[0];
+const topAction = shortlist.items[0];
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
-  <div class="home-container">
-    <div class="home-copy">
-      <h1>Welcome to your new Astro Blog</h1>
-      <p>Check out the docs on <a href="https://www.github.com/Charca/astro-blog-template" target="_blank" rel="noopener">GitHub</a> to get started.</p>
-    </div>
+  <div class="home-dashboard">
+    <header class="dashboard-header">
+      <p class="eyebrow">Portfolio Dashboard</p>
+      <h1>KumoTrade</h1>
+      <p class="as-of">As of {holdings.asOf}</p>
+    </header>
 
-    <div class="hero-image-container">
-      <picture>
-        <source srcset="/assets/home-illustration.webp" media="(min-width: 600px)">
-        <img class="hero-image" alt="Illustration of person reading a book" src="/assets/home-illustration-small.webp" width="550" height="466">
-      </picture>
-      <p class="caption">
-        Illustration by
-        <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
-        from
-        <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
-      </p>
-    </div>
+    <section class="dashboard-grid" aria-label="Portfolio summary">
+      <a class="tile performance-tile" href="/pnl">
+        <span class="tile-label">Portfolio Performance</span>
+        <strong>+0.4%</strong>
+        <span class="tile-note">Since IC start; placeholder until formal YTD is added</span>
+      </a>
+
+      <a class="tile" href="/holdings">
+        <span class="tile-label">Regime</span>
+        <strong>{holdings.regime}</strong>
+        <span class="tile-note">Current portfolio posture</span>
+      </a>
+
+      <a class="tile exposure-tile" href="/holdings">
+        <span class="tile-label">Gross / Net Exposure</span>
+        <strong>{holdings.exposure.grossExposurePct}% / {holdings.exposure.netExposurePct}%</strong>
+        <span class="tile-note">Recommended net: {holdings.exposure.recommendedNetExposurePct}%</span>
+      </a>
+
+      <a class="tile wide-tile" href={`/blog/${latestPost.slug}`}>
+        <span class="tile-label">Latest Post</span>
+        <strong>{latestPost.title}</strong>
+        <span class="tile-note">{latestPost.description}</span>
+      </a>
+
+      <a class="tile" href="/recommendations">
+        <span class="tile-label">Latest Action</span>
+        <strong>{latestAction.ticker}</strong>
+        <span class="tile-note">{latestAction.outcome}</span>
+      </a>
+
+      <a class="tile" href="/recommendations">
+        <span class="tile-label">Top Action</span>
+        <strong>{topAction.name}</strong>
+        <span class="tile-note">{topAction.action}</span>
+      </a>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
-  .home-container {
-    align-items: center;
+  .home-dashboard {
     display: flex;
     flex: 1;
+    flex-direction: column;
     justify-content: center;
-    margin: 2em 0;
-    min-height: 400px;
-  }
-
-  .home-copy {
-    flex: 1;
-    padding: 0 1em;
-  }
-
-  .home-copy h1 {
-    font-weight: 700;
-    margin-bottom: 0.5em;
-    line-height: 1.3;
-  }
-
-  .home-copy p {
-    font-size: 1.4em;
-  }
-
-  .hero-image-container {
-    margin: 0 1em;
-    text-align: center;
-  }
-
-  .hero-image-container picture {
-    display: block;
-    min-height: 250px;
-  }
-
-  .caption {
-    font-size: .8em;
-    font-style: italic;
-    text-align: left;
-  }
-
-  .hero-image {
+    margin: 0 auto;
+    max-width: 76rem;
+    min-height: 620px;
     width: 100%;
-    max-width: 550px;
-    margin-bottom: 1em;
   }
 
-  @media (max-width: 1200px) {
-    p {
-      font-size: 1.2em;
-    }
+  .dashboard-header {
+    margin: 1rem 0 2rem;
+  }
 
-    .hero-image {
-      max-width: 400px;
+  .eyebrow,
+  .as-of,
+  .tile-label,
+  .tile-note {
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+  }
+
+  .eyebrow {
+    color: var(--primary-color);
+    letter-spacing: 0;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 3.7rem;
+    margin: 0;
+  }
+
+  .as-of {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.75rem 0 0;
+    text-transform: uppercase;
+  }
+
+  .dashboard-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tile {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 8px;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+    padding: 1.1rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .tile:hover {
+    border-color: var(--primary-color);
+    color: inherit;
+    transform: translateY(-2px);
+  }
+
+  .tile-label {
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .tile strong {
+    display: block;
+    font-family: var(--font-family-sans);
+    font-size: 1.8rem;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+
+  .tile-note {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.45;
+    margin-top: auto;
+    text-transform: none;
+  }
+
+  .performance-tile {
+    background: rgba(84, 142, 155, 0.08);
+  }
+
+  .performance-tile strong {
+    color: var(--primary-color);
+    font-size: 4.1rem;
+  }
+
+  .wide-tile {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 960px) {
+    .dashboard-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  @media (max-width: 800px) {
-    .home-container {
-      flex-direction: column;
+  @media (max-width: 640px) {
+    .home-dashboard {
+      justify-content: flex-start;
+      min-height: 0;
     }
 
-    .home-copy {
-      flex: 0;
-      padding-bottom: 2em;
-      text-align: center;
+    h1 {
+      font-size: 3rem;
+    }
+
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wide-tile {
+      grid-column: auto;
+    }
+
+    .performance-tile strong {
+      font-size: 3.5rem;
     }
   }
 </style>

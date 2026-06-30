@@ -1,55 +1,37 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogListPage from '../../components/BlogListPage.astro';
+import { getPostSummary, getPostType } from '../../data/postSummaries.js';
 
 const title = 'Blog';
-const description = 'Latest articles.';
+const description = 'KumoTrade investment committee posts, daily reviews, weekly reviews, and decision records.';
 const permalink = `${Astro.site.href}blog`;
+const POSTS_PER_PAGE = 10;
 
 const postModules = import.meta.glob('../../data/blog-posts/*.md', { eager: true });
-let allPosts = Object.values(postModules).map((post) => ({
-  data: post.frontmatter,
-}));
+let allPosts = Object.values(postModules)
+  .map((post) => {
+    const summary = getPostSummary(post.frontmatter.slug);
+    const type = summary?.type ?? getPostType(post.frontmatter.slug);
+    return {
+      data: post.frontmatter,
+      summary,
+      type,
+    };
+  })
+  .filter((post) => post.type !== 'Other');
+
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+
+const currentPage = 1;
+const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
 ---
 
-<BaseLayout title={title} description={description} permalink={permalink} current="blog">
-  <div class="container">
-    <h1>Blog</h1>
-    {allPosts.map((post, index) => {
-      const href = `/blog/${post.data.slug}`;
-      return (
-        <div>
-          { index !== 0 && <hr /> }
-          <div class="post-item">
-            <h2>
-              <a href={href}>{post.data.title}</a>
-            </h2>
-            <p>{post.data.description}</p>
-            <div class="post-item-footer">
-              <span class="post-item-date">— {post.data.publishDate}</span>
-            </div>
-          </div>
-        </div>
-      )
-    })}
-  </div>
-</BaseLayout>
-
-<style>
-  h2,
-  .post-item-footer {
-    font-family: var(--font-family-sans);
-    font-weight: 700;
-  }
-
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
-  }
-
-  hr {
-    margin: 60px auto;
-  }
-</style>
+<BlogListPage
+  posts={posts}
+  currentPage={currentPage}
+  totalPages={totalPages}
+  title={title}
+  description={description}
+  permalink={permalink}
+/>

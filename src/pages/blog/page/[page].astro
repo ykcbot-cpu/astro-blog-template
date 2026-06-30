@@ -1,0 +1,50 @@
+---
+import BlogListPage from '../../../components/BlogListPage.astro';
+import { getPostSummary, getPostType } from '../../../data/postSummaries.js';
+
+export async function getStaticPaths() {
+  const postsPerPage = 10;
+  const postModules = import.meta.glob('../../../data/blog-posts/*.md', { eager: true });
+  const allPosts = Object.values(postModules)
+    .map((post) => {
+      const summary = getPostSummary(post.frontmatter.slug);
+      const type = summary?.type ?? getPostType(post.frontmatter.slug);
+      return {
+        data: post.frontmatter,
+        summary,
+        type,
+      };
+    })
+    .filter((post) => post.type !== 'Other')
+    .sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / postsPerPage));
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => {
+    const page = index + 2;
+    const start = (page - 1) * postsPerPage;
+
+    return {
+      params: { page: String(page) },
+      props: {
+        currentPage: page,
+        totalPages,
+        posts: allPosts.slice(start, start + postsPerPage),
+      },
+    };
+  });
+}
+
+const { posts, currentPage, totalPages } = Astro.props;
+const title = `Blog - Page ${currentPage}`;
+const description = 'KumoTrade investment committee posts, daily reviews, weekly reviews, and decision records.';
+const permalink = `${Astro.site.href}blog/page/${currentPage}`;
+---
+
+<BlogListPage
+  posts={posts}
+  currentPage={currentPage}
+  totalPages={totalPages}
+  title={title}
+  description={description}
+  permalink={permalink}
+/>

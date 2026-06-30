@@ -2,47 +2,73 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'About';
-const description = 'About your blog.';
+const description = 'KumoTrade is a public investment journal for a concentrated long-short US equity portfolio.';
 const permalink = `${Astro.site.href}about`;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="about">
-  <div class="container">
-    <h1>About</h1>
-    <figure class="about-image">
-      <img src="/assets/about-illustration.webp" alt="Illustration of a notebook" width="330">
-      <figcaption>
-        Illustration by
-        <a href="https://icons8.com/illustrations/author/5c07e68d82bcbc0092519bb6" target="_blank" rel="noopener">Icons 8</a>
-        from
-        <a href="https://icons8.com/illustrations" target="_blank" rel="noopener">Ouch!</a>
-      </figcaption>
-    </figure>
-    <p>Text placeholder via <a href="https://jeffsum.com/" target="_blank">Jeffsum</a>.</p>
-    <p>So you two dig up, dig up dinosaurs? What do they got in there? King Kong? My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Life finds a way. God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.</p>
-    <p>You really think you can fly that thing? You know what? It is beets. I've crashed into a beet truck. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Is this my espresso machine? Wh-what is-h-how did you get my espresso machine?</p>
-    <p>Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Hey, take a look at the earthlings. Goodbye! I was part of something special. Just my luck, no ice. You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Jaguar shark! So tell me - does it really exist? This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Yes, Yes, without the oops! You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager?</p>
-    <p>Yes, Yes, without the oops! Do you have any idea how long it takes those cups to decompose. They're using our own satellites against us. And the clock is ticking. Do you have any idea how long it takes those cups to decompose. My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard!</p>
+  <div class="container about-page">
+    <p class="eyebrow">About KumoTrade</p>
+    <h1>KumoTrade</h1>
+
+    <div class="about-copy">
+      <p>KumoTrade is a public investment journal for a concentrated long-short US equity portfolio.</p>
+
+      <p>The site tracks how each decision is made, changed, and judged over time: daily and weekly investment committee reviews, active holdings, recommendations, P&amp;L, thesis updates, risk controls, and execution notes.</p>
+
+      <p>The process is practical and rule-aware. Positions are scored, sized, reviewed against market regime, and updated when the facts change. The goal is not to publish perfect calls. The goal is to build a transparent record of disciplined decision-making, including wins, losses, trims, stops, and mistakes.</p>
+
+      <p>KumoTrade is for learning and accountability. It is not financial advice.</p>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
-  .about-image {
-    float: right;
-    margin: -3em -7em 2em 2em;
-    max-width: 300px;
+  .about-page {
+    padding: 3rem 0 4rem;
   }
 
-  .about-image img {
-    border-radius: 8px;
-    margin-bottom: 1.5em;
+  .eyebrow {
+    color: var(--primary-color);
+    font-family: var(--font-family-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
   }
 
-  @media (max-width: 1020px) {
-    .about-image {
-      float: none;
-      margin: 0 auto 2em;
+  .about-page h1 {
+    margin-bottom: 0.7em;
+  }
+
+  .about-copy {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+  }
+
+  .about-copy p:first-child {
+    margin-top: 0;
+  }
+
+  .about-copy p:last-child {
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .about-page {
+      padding-top: 2rem;
+    }
+
+    .about-page h1 {
+      font-size: 3rem;
+    }
+
+    .about-copy {
+      padding-left: 1rem;
     }
   }
 </style>
