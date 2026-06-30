@@ -1,55 +1,244 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPostSummary, getPostType } from '../../data/postSummaries.js';
 
 const title = 'Blog';
-const description = 'Latest articles.';
+const description = 'KumoTrade investment committee posts, daily reviews, weekly reviews, and decision records.';
 const permalink = `${Astro.site.href}blog`;
 
 const postModules = import.meta.glob('../../data/blog-posts/*.md', { eager: true });
-let allPosts = Object.values(postModules).map((post) => ({
-  data: post.frontmatter,
-}));
+let allPosts = Object.values(postModules)
+  .map((post) => {
+    const summary = getPostSummary(post.frontmatter.slug);
+    const type = summary?.type ?? getPostType(post.frontmatter.slug);
+    return {
+      data: post.frontmatter,
+      summary,
+      type,
+    };
+  })
+  .filter((post) => post.type !== 'Other');
 allPosts = allPosts.sort((a, b) => new Date(b.data.publishDate).valueOf() - new Date(a.data.publishDate).valueOf());
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="blog">
-  <div class="container">
-    <h1>Blog</h1>
-    {allPosts.map((post, index) => {
+  <div class="blog-page">
+    <header class="blog-header">
+      <p class="eyebrow">Decision Log</p>
+      <h1>Blog</h1>
+      <p>Daily and weekly investment committee posts, sorted newest first.</p>
+    </header>
+
+    <div class="filter-pills" aria-label="Post filters">
+      <button class="filter-pill active" type="button" data-filter="all">All</button>
+      <button class="filter-pill" type="button" data-filter="Daily IC">Daily IC</button>
+      <button class="filter-pill" type="button" data-filter="Weekly IC">Weekly IC</button>
+    </div>
+
+    <div class="post-grid">
+    {allPosts.map((post) => {
       const href = `/blog/${post.data.slug}`;
+      const summary = post.summary;
       return (
-        <div>
-          { index !== 0 && <hr /> }
-          <div class="post-item">
-            <h2>
-              <a href={href}>{post.data.title}</a>
-            </h2>
-            <p>{post.data.description}</p>
-            <div class="post-item-footer">
-              <span class="post-item-date">— {post.data.publishDate}</span>
-            </div>
+        <article class="post-card" data-type={post.type}>
+          <div class="post-card-meta">
+            <span>{post.data.publishDate}</span>
+            <span>{post.type}</span>
           </div>
-        </div>
+          <h2>
+            <a href={href}>{post.data.title}</a>
+          </h2>
+          <p>{post.data.description}</p>
+          <div class="post-card-tags">
+            <span>{summary?.regime ?? 'Regime pending'}</span>
+          </div>
+          <div class="post-card-action">
+            <span>Main action</span>
+            <strong>{summary?.mainAction ?? 'Summary pending'}</strong>
+          </div>
+        </article>
       )
     })}
+    </div>
   </div>
 </BaseLayout>
 
+<script>
+  const filterButtons = document.querySelectorAll('.filter-pill');
+  const postCards = document.querySelectorAll('.post-card');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+
+      filterButtons.forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+
+      postCards.forEach((card) => {
+        const matches = filter === 'all' || card.getAttribute('data-type') === filter;
+        card.classList.toggle('hidden', !matches);
+      });
+    });
+  });
+</script>
+
 <style>
-  h2,
-  .post-item-footer {
+  .blog-page {
+    margin: 0 auto;
+    max-width: 76rem;
+    padding: 2.5rem 0 4rem;
+    width: 100%;
+  }
+
+  .blog-header {
+    margin-bottom: 1.8rem;
+    max-width: 44rem;
+  }
+
+  .eyebrow,
+  .blog-header p,
+  .filter-pill,
+  .post-card-meta,
+  .post-card-tags,
+  .post-card-action {
     font-family: var(--font-family-sans);
     font-weight: 700;
   }
 
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
+  .eyebrow {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    letter-spacing: 0;
+    margin: 0 0 0.5rem;
     text-transform: uppercase;
-    margin-right: 16px;
   }
 
-  hr {
-    margin: 60px auto;
+  .blog-header h1 {
+    font-size: 3.7rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .blog-header p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .filter-pill {
+    background: transparent;
+    border: 1px solid rgba(84, 142, 155, 0.45);
+    border-radius: 999px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 0.55rem 0.9rem;
+  }
+
+  .filter-pill.active,
+  .filter-pill:hover {
+    background: var(--primary-color);
+    color: #fff;
+  }
+
+  .post-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .post-card {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 1.15rem;
+  }
+
+  .post-card.hidden {
+    display: none;
+  }
+
+  .post-card-meta {
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    gap: 0.6rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .post-card h2 {
+    font-family: var(--font-family-sans);
+    font-size: 1.45rem;
+    margin: 0.85rem 0 0.7rem;
+  }
+
+  .post-card h2 a {
+    text-decoration: none;
+  }
+
+  .post-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .post-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .post-card-tags span {
+    border: 1px solid rgba(84, 142, 155, 0.35);
+    border-radius: 999px;
+    color: var(--primary-color);
+    font-size: 0.82rem;
+    line-height: 1.3;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .post-card-action {
+    margin-top: auto;
+  }
+
+  .post-card-action span {
+    color: var(--text-secondary);
+    display: block;
+    font-size: 0.78rem;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+  }
+
+  .post-card-action strong {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 760px) {
+    .blog-page {
+      padding-top: 2rem;
+    }
+
+    .blog-header h1 {
+      font-size: 3rem;
+    }
+
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
