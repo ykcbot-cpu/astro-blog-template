@@ -1,4 +1,14 @@
 export const postSummaries = {
+  'daily-ic-review-2026-06-30': {
+    type: 'Daily IC',
+    regime: 'Neutral / repair attempt',
+    stance: 'Light book; no broad re-risk yet',
+    mainAction: 'Hold current positions and wait for QQQ to confirm above 732-733 before adding risk.',
+    keyHoldingAction: 'Keep LLY and GE as runners, hold XLE as hedge, and manage JPM/SMH with strict reclaim and stop levels.',
+    keyRisk: 'QQQ has repaired into 720-724 but has not confirmed above 732-733.',
+    pnlImpact: 'Active plus realized P&L about +4,784 before fees/slippage.',
+    correctionStatus: 'Original publication',
+  },
   'daily-ic-review-2026-06-17': {
     type: 'Daily IC',
     regime: 'Neutral / selective rotation',
