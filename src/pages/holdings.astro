@@ -233,35 +233,50 @@ const hasHiddenClosedRows = recentlyClosed.length > closedDisplayLimit;
     width: 100%;
   }
 
+  .active-table {
+    min-width: 1040px;
+  }
+
   .closed-table {
     min-width: 1120px;
   }
 
   .active-table .col-ticker {
-    width: 5.5rem;
+    width: 5rem;
   }
 
   .active-table .col-direction {
-    width: 8rem;
+    width: 7.5rem;
   }
 
   .active-table .col-qty {
-    width: 5rem;
+    width: 4.5rem;
   }
 
   .active-table .col-price,
   .active-table .col-score {
-    width: 6rem;
+    width: 5.5rem;
   }
 
   .active-table .col-note {
-    width: 16rem;
+    width: 13rem;
+  }
+
+  .active-table .col-action {
+    width: 32rem;
   }
 
   .holdings-table th,
   .holdings-table td {
     overflow-wrap: anywhere;
+    padding-left: 0.65em;
+    padding-right: 0.65em;
     vertical-align: top;
+  }
+
+  .active-table th:nth-child(-n + 5),
+  .active-table td:nth-child(-n + 5) {
+    white-space: nowrap;
   }
 
   .col-ticker {
