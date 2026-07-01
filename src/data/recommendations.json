@@ -1,87 +1,130 @@
 {
-  "asOf": "2026-06-27 weekly review / 26 Jun US close",
-  "summary": "Stay defensive. NVDA has been fully closed, exposure is light, and the next action is to protect GE/JPM/LLY runners while holding TSLA and XLE hedges only while levels hold. Avoid new broad buys until QQQ reclaims 720-724 and then 732-733.",
+  "asOf": "2026-07-01 SGT / 2026-06-30 US close",
+  "summary": "Selective re-risk is allowed, but not chase mode. QQQ closed above the 732-733 confirmation gate and VIX is below 18, while QQQ remains below the 740 full risk-on gate and 10Y yield is still a valuation headwind. Keep the current book light, prepare MRVL first and AMD second, and use JPM as the first funding source if triggers confirm.",
+  "regime": {
+    "classification": "Neutral-to-repair, improving",
+    "marketGate": "QQQ >733 confirms repair; QQQ >740 allows first controlled re-risk",
+    "riskPause": "Cancel new buys if QQQ <733 or VIX >18"
+  },
   "active": [
+    {
+      "ticker": "SMH",
+      "recommendation": "Hold runner",
+      "trigger": "Hold; add only if QQQ >740 or SMH retests 640-645 and holds",
+      "stop": "625 review / 605 exit",
+      "target": "675",
+      "status": "Improving",
+      "followUp": "Current best risk-on exposure; do not add unless the index gate confirms."
+    },
+    {
+      "ticker": "XLE",
+      "recommendation": "Hold short hedge / reduce on confirmation",
+      "trigger": "Hold while below 55.25-55.50",
+      "stop": "55.50 / 57.50 hard review",
+      "target": "52.50 partial cover",
+      "status": "Intact hedge",
+      "followUp": "Reduce hedge if QQQ >740 and VIX remains below 18."
+    },
     {
       "ticker": "GE",
       "recommendation": "Hold runner",
       "trigger": "Hold 37 shares while above 365",
       "stop": "365",
-      "target": "380 / 390",
+      "target": "380-390",
       "status": "Intact",
-      "followUp": "Do not re-add after the 75% take-profit."
-    },
-    {
-      "ticker": "JPM",
-      "recommendation": "Hold runner / reduce if weak",
-      "trigger": "Hold only if it reclaims 332; otherwise reduce or exit",
-      "stop": "332",
-      "target": "340-343",
-      "status": "Yellow-lite",
-      "followUp": "Do not let the runner turn into thesis anchoring below the review level."
+      "followUp": "No add; consider trim into 380-390 if tape weakens."
     },
     {
       "ticker": "LLY",
-      "recommendation": "Hold only",
-      "trigger": "Hold after breakout; do not chase/add after the sharp move",
-      "stop": "1165-1175 review zone",
-      "target": "1230",
-      "status": "Strengthened",
-      "followUp": "Treat as defensive-growth exception, not permission to add broad risk."
+      "recommendation": "Hold runner only",
+      "trigger": "Needs reclaim above 1,200",
+      "stop": "1,175 hard review",
+      "target": "Runner",
+      "status": "Yellow-lite",
+      "followUp": "No new capital; tighten if it cannot reclaim 1,200."
     },
     {
-      "ticker": "SMH",
-      "recommendation": "Hold runner",
-      "trigger": "Hold only above 605-607",
-      "stop": "605",
-      "target": "650 / 675",
+      "ticker": "JPM",
+      "recommendation": "Weak hold / displacement candidate",
+      "trigger": "Needs 332 then 336 reclaim",
+      "stop": "325",
+      "target": "336-340",
       "status": "Yellow",
-      "followUp": "Exit if QQQ loses 705."
+      "followUp": "First funding source for MRVL or AMD if QQQ confirms above 740."
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "MRVL",
+      "recommendation": "New conditional buy",
+      "trigger": "285-292 pullback hold, or >300 breakout only with QQQ >740",
+      "stop": "270",
+      "target": "330-350",
+      "status": "Best fresh scan candidate",
+      "followUp": "Starter size only; do not chase if QQQ stays below 740."
     },
     {
-      "ticker": "TSLA",
-      "recommendation": "Hold short hedge",
-      "trigger": "Hold only while below 380",
-      "stop": "380",
-      "target": "360 / 345",
-      "status": "Fragile near stop",
-      "followUp": "Cover if TSLA holds above 380 or QQQ repairs above 720-724."
+      "ticker": "AMD",
+      "recommendation": "New conditional buy",
+      "trigger": "QQQ >740 and AMD holds 570 or breaks 585-590",
+      "stop": "540",
+      "target": "640-680",
+      "status": "AI beta leader",
+      "followUp": "Second new long after MRVL; high beta, so size smaller."
     },
     {
-      "ticker": "XLE",
-      "recommendation": "Hold short hedge",
-      "trigger": "Hold below 55.50",
-      "stop": "55.50 / 57.50",
-      "target": "52.50",
-      "status": "Intact",
-      "followUp": "Cover 300 near 52.50; cover 300 above 55.50; exit remainder above 57.50."
+      "ticker": "VRT",
+      "recommendation": "New watch",
+      "trigger": "315-325 pullback hold",
+      "stop": "300",
+      "target": "360-380",
+      "status": "AI infrastructure, extended",
+      "followUp": "Good company, bad chase after +9% day."
+    },
+    {
+      "ticker": "MU",
+      "recommendation": "New watch",
+      "trigger": "1,100-1,125 pullback hold",
+      "stop": "1,050",
+      "target": "1,250",
+      "status": "Memory leader, extended",
+      "followUp": "Use as memory-cycle confirmation unless it consolidates."
+    },
+    {
+      "ticker": "SNDK",
+      "recommendation": "New watch",
+      "trigger": "Only after consolidation",
+      "stop": "Setup dependent",
+      "target": "Setup dependent",
+      "status": "Momentum leader, very extended",
+      "followUp": "Too hot for immediate execution."
     }
   ],
   "completedOrRemoved": [
     {
+      "ticker": "TSLA",
+      "outcome": "Short hedge covered: bought 70 at 395.78 on 2026-06-30 22:37 SGT",
+      "followUp": "Holding now 0; no automatic re-short."
+    },
+    {
+      "ticker": "LLY",
+      "outcome": "Partial take-profit: sold 18 at 1,230.08 on 2026-06-30 22:37 SGT",
+      "followUp": "Remaining 7 shares are runner only."
+    },
+    {
       "ticker": "NVDA",
       "outcome": "Closed 220 shares at 193.88 on 2026-06-26 22:34 SGT",
-      "followUp": "Do not re-enter unless NVDA reclaims 195/200 and QQQ repairs."
+      "followUp": "Now watch only; fresh capital priority is MRVL then AMD."
     },
     {
       "ticker": "GE",
-      "outcome": "Triggered and executed: sold 113 shares at 365.09 on 2026-06-25 SGT",
+      "outcome": "Partial take-profit: sold 113 shares at 365.09 on 2026-06-25 SGT",
       "followUp": "Remaining 37 shares are runner only."
     },
     {
-      "ticker": "JPM",
-      "outcome": "Triggered 75% take-profit; current holding is 40-share runner",
-      "followUp": "Hold only if it reclaims 332; otherwise reduce or exit."
-    },
-    {
       "ticker": "QQQ",
-      "outcome": "Closed at 740.95 on 2026-06-15 21:47 SGT",
+      "outcome": "Short hedge closed at 740.95 on 2026-06-15 21:47 SGT",
       "followUp": "Do not reopen without fresh breakdown."
-    },
-    {
-      "ticker": "AMZN/MSFT/GOOGL/AVGO",
-      "outcome": "No buy while QQQ remains below 732-733",
-      "followUp": "Keep on watch only."
     }
   ]
 }

@@ -5,6 +5,17 @@ import holdings from '../data/holdings.json';
 const title = 'Holdings';
 const description = 'Current KumoTrade portfolio holdings and risk posture.';
 const permalink = `${Astro.site.href}holdings`;
+const closedDisplayLimit = 20;
+const parseExitDate = (value) => {
+  const [datePart, timePart = '00:00'] = value.replace(' SGT', '').split(' ');
+  const normalized = `${datePart}T${timePart}:00+08:00`;
+  const parsed = Date.parse(normalized);
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+const recentlyClosed = [...holdings.recentlyClosed].sort(
+  (left, right) => parseExitDate(right.exitDate) - parseExitDate(left.exitDate),
+);
+const hasHiddenClosedRows = recentlyClosed.length > closedDisplayLimit;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="holdings">
@@ -32,7 +43,16 @@ const permalink = `${Astro.site.href}holdings`;
 
     <section class="table-wrap" aria-label="Active holdings">
       <h2>Active Holdings</h2>
-      <table>
+      <table class="holdings-table active-table">
+        <colgroup>
+          <col class="col-ticker" />
+          <col class="col-direction" />
+          <col class="col-qty" />
+          <col class="col-price" />
+          <col class="col-score" />
+          <col class="col-note" />
+          <col class="col-action" />
+        </colgroup>
         <thead>
           <tr>
             <th>Ticker</th>
@@ -61,12 +81,31 @@ const permalink = `${Astro.site.href}holdings`;
     </section>
 
     <section class="table-wrap" aria-label="Recently closed positions">
-      <h2>Recently Closed</h2>
-      <table>
+      <div class="section-heading">
+        <h2>Closed / Reduced</h2>
+        <p data-closed-count>
+          Showing latest {Math.min(closedDisplayLimit, recentlyClosed.length)} of {recentlyClosed.length}
+        </p>
+      </div>
+      <table class="holdings-table closed-table" data-closed-table>
+        <colgroup>
+          <col class="col-date" />
+          <col class="col-date" />
+          <col class="col-ticker" />
+          <col class="col-direction" />
+          <col class="col-qty" />
+          <col class="col-price" />
+          <col class="col-price" />
+          <col class="col-pnl" />
+          <col class="col-action" />
+        </colgroup>
         <thead>
           <tr>
+            <th>Exit Date</th>
+            <th>Entry Date</th>
             <th>Ticker</th>
             <th>Direction</th>
+            <th>Qty</th>
             <th>Entry</th>
             <th>Exit</th>
             <th>Realized P&L</th>
@@ -74,10 +113,13 @@ const permalink = `${Astro.site.href}holdings`;
           </tr>
         </thead>
         <tbody>
-          {holdings.recentlyClosed.map((position) => (
-            <tr>
+          {recentlyClosed.map((position, index) => (
+            <tr class:list={{ 'is-hidden': index >= closedDisplayLimit }}>
+              <td>{position.exitDate}</td>
+              <td>{position.entryDate}</td>
               <td><strong>{position.ticker}</strong></td>
               <td>{position.direction}</td>
+              <td>{position.quantity}</td>
               <td>{position.entryPrice}</td>
               <td>{position.exitPrice}</td>
               <td>{position.realizedPnlUsd}</td>
@@ -86,9 +128,31 @@ const permalink = `${Astro.site.href}holdings`;
           ))}
         </tbody>
       </table>
+      {hasHiddenClosedRows && (
+        <button class="expand-button" type="button" data-expand-closed>
+          View all closed / reduced positions
+        </button>
+      )}
     </section>
   </div>
 </BaseLayout>
+
+<script>
+  const expandButton = document.querySelector('[data-expand-closed]');
+  const closedTable = document.querySelector('[data-closed-table]');
+  const closedCount = document.querySelector('[data-closed-count]');
+
+  expandButton?.addEventListener('click', () => {
+    closedTable?.querySelectorAll('tbody tr.is-hidden').forEach((row) => {
+      row.classList.remove('is-hidden');
+    });
+    if (closedCount) {
+      const totalRows = closedTable?.querySelectorAll('tbody tr').length ?? 0;
+      closedCount.textContent = `Showing all ${totalRows}`;
+    }
+    expandButton.remove();
+  });
+</script>
 
 <style>
   .dashboard {
@@ -137,17 +201,102 @@ const permalink = `${Astro.site.href}holdings`;
   }
 
   .table-wrap {
+    margin-top: 2.5rem;
     overflow-x: auto;
   }
 
-  table {
-    min-width: 780px;
+  .section-heading {
+    align-items: end;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .section-heading h2 {
+    margin-bottom: 0.6rem;
+  }
+
+  .section-heading p {
+    color: var(--text-secondary);
+    font-family: var(--font-family-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0 0 0.7rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .holdings-table {
+    min-width: 860px;
+    table-layout: fixed;
     width: 100%;
+  }
+
+  .closed-table {
+    min-width: 1120px;
+  }
+
+  .holdings-table th,
+  .holdings-table td {
+    overflow-wrap: anywhere;
+    vertical-align: top;
+  }
+
+  .col-ticker {
+    width: 7%;
+  }
+
+  .col-direction {
+    width: 12%;
+  }
+
+  .col-qty {
+    width: 7%;
+  }
+
+  .col-price,
+  .col-score,
+  .col-pnl {
+    width: 10%;
+  }
+
+  .col-date {
+    width: 13%;
+  }
+
+  .col-note {
+    width: 20%;
+  }
+
+  .col-action {
+    width: 24%;
+  }
+
+  .is-hidden {
+    display: none;
+  }
+
+  .expand-button {
+    background: var(--color-accent);
+    border: 0;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: var(--font-family-sans);
+    font-weight: 700;
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
   }
 
   @media (max-width: 760px) {
     .metrics {
       grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+      align-items: start;
+      flex-direction: column;
+      gap: 0;
     }
   }
 </style>

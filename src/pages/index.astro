@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import holdings from '../data/holdings.json';
 import recommendations from '../data/recommendations.json';
-import shortlist from '../data/shortlist.json';
 
 const title = 'KumoTrade';
 const description = 'KumoTrade portfolio dashboard, latest investment committee posture, and current action board.';
@@ -14,7 +13,7 @@ const latestPost = Object.values(postModules)
   .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())[0];
 
 const latestAction = recommendations.completedOrRemoved[0];
-const topAction = shortlist.items[0];
+const topWatchlist = recommendations.watchlist[0];
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink}>
@@ -50,16 +49,16 @@ const topAction = shortlist.items[0];
         <span class="tile-note">{latestPost.description}</span>
       </a>
 
-      <a class="tile" href="/recommendations">
+      <a class="tile" href="/watchlist">
         <span class="tile-label">Latest Action</span>
         <strong>{latestAction.ticker}</strong>
         <span class="tile-note">{latestAction.outcome}</span>
       </a>
 
-      <a class="tile" href="/recommendations">
-        <span class="tile-label">Top Action</span>
-        <strong>{topAction.name}</strong>
-        <span class="tile-note">{topAction.action}</span>
+      <a class="tile" href="/watchlist">
+        <span class="tile-label">Top Watchlist</span>
+        <strong>{topWatchlist.ticker}</strong>
+        <span class="tile-note">{topWatchlist.trigger}</span>
       </a>
     </section>
   </div>
