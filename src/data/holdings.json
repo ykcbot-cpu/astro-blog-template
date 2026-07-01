@@ -1,12 +1,12 @@
 {
-  "asOf": "2026-06-27 weekly review / 26 Jun US close",
-  "regime": "Neutral / risk-off warning",
+  "asOf": "2026-07-01 SGT / 2026-06-30 US close",
+  "regime": "Neutral-to-repair, improving",
   "exposure": {
-    "longNotionalUsd": 79648,
-    "shortNotionalUsd": 59588,
-    "grossExposurePct": 13.9,
-    "netExposurePct": 2.0,
-    "recommendedNetExposurePct": "0-10"
+    "longNotionalUsd": 59585,
+    "shortNotionalUsd": 32556,
+    "grossExposurePct": 9.21,
+    "netExposurePct": 2.7,
+    "recommendedNetExposurePct": "0-15"
   },
   "positions": [
     {
@@ -15,13 +15,13 @@
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 335.62,
-      "lastPriceUsed": 369,
+      "lastPriceUsed": 373.73,
       "stop": 365,
-      "target": 380,
+      "target": "380-390",
       "score": "7/10",
       "status": "Runner",
-      "thesis": "Intact, extended",
-      "action": "Hold runner above 365 only; no re-add."
+      "thesis": "Intact",
+      "action": "Hold above 365; trim 380-390 if tape weakens; no add."
     },
     {
       "ticker": "JPM",
@@ -29,27 +29,27 @@
       "direction": "Long",
       "quantity": 40,
       "entryPrice": 313.43,
-      "lastPriceUsed": 329.05,
-      "stop": 332,
-      "target": 340,
-      "score": "6/10",
-      "status": "Runner",
-      "thesis": "Yellow-lite; momentum weaker below 332 reference",
-      "action": "Hold only if it reclaims 332; otherwise reduce or exit."
+      "lastPriceUsed": 327.33,
+      "stop": 325,
+      "target": "336-340",
+      "score": "5/10",
+      "status": "Weak hold",
+      "thesis": "Yellow; failed 332/336 reclaim",
+      "action": "Reclaim 332/336 or reduce; first funding source for MRVL/AMD; exit below 325."
     },
     {
       "ticker": "LLY",
       "name": "Eli Lilly",
       "direction": "Long",
-      "quantity": 25,
+      "quantity": 7,
       "entryPrice": 1115.12,
-      "lastPriceUsed": 1208.12,
-      "stop": 1165,
-      "target": 1230,
-      "score": "7.5/10",
-      "status": "Active",
-      "thesis": "Strengthened after 1137 reclaim and sharp breakout",
-      "action": "Hold; tighten review to 1165-1175 after the spike; do not chase/add."
+      "lastPriceUsed": 1199.43,
+      "stop": 1175,
+      "target": "Runner",
+      "score": "6/10",
+      "status": "Runner",
+      "thesis": "Yellow-lite; closed just below 1,200 review line",
+      "action": "Hold 7 only; reclaim 1,200 or tighten; hard review 1,175."
     },
     {
       "ticker": "SMH",
@@ -57,27 +57,13 @@
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 605.64,
-      "lastPriceUsed": 611.61,
+      "lastPriceUsed": 655.89,
       "stop": 605,
-      "target": 650,
-      "score": "5/10",
+      "target": 675,
+      "score": "8/10",
       "status": "Runner",
-      "thesis": "Yellow while QQQ remains weak",
-      "action": "Hold only above 605-607; exit if QQQ loses 705."
-    },
-    {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "direction": "Short hedge",
-      "quantity": 70,
-      "entryPrice": 375.88,
-      "lastPriceUsed": 379.71,
-      "stop": 380,
-      "target": 360,
-      "score": "5.5/10",
-      "status": "Active hedge",
-      "thesis": "Fragile near 380 danger line",
-      "action": "Hold short only below 380; cover if TSLA holds above 380 or QQQ repairs."
+      "thesis": "Improving but market-dependent",
+      "action": "Hold; add only if QQQ >740 or SMH retests 640-645 and holds."
     },
     {
       "ticker": "XLE",
@@ -85,21 +71,44 @@
       "direction": "Short hedge",
       "quantity": 613,
       "entryPrice": 57.08,
-      "lastPriceUsed": 53.84,
+      "lastPriceUsed": 53.11,
       "stop": 55.5,
       "target": 52.5,
       "score": "7/10",
       "status": "Active hedge",
-      "thesis": "Intact below 55.50",
-      "action": "Hold below 55.50; cover 300 near 52.50; exit remainder above 57.50."
+      "thesis": "Intact hedge below 55.50",
+      "action": "Hold below 55.50; reduce if QQQ >740 and VIX <18; partial cover near 52.50."
     }
   ],
   "recentlyClosed": [
+    {
+      "ticker": "TSLA",
+      "direction": "Short hedge cover",
+      "quantity": 70,
+      "entryPrice": 375.88,
+      "entryDate": "2026-06-30 SGT",
+      "exitPrice": 395.78,
+      "exitDate": "2026-06-30 22:37 SGT",
+      "realizedPnlUsd": -1393,
+      "reason": "Cover trigger breached above 380. Holding now 0."
+    },
+    {
+      "ticker": "LLY",
+      "direction": "Long partial TP",
+      "quantity": 18,
+      "entryPrice": 1115.12,
+      "entryDate": "2026-06-27 IC entry",
+      "exitPrice": 1230.08,
+      "exitDate": "2026-06-30 22:37 SGT",
+      "realizedPnlUsd": 2069.28,
+      "reason": "Hit take-profit; retained 7-share runner."
+    },
     {
       "ticker": "NVDA",
       "direction": "Long exit",
       "quantity": 220,
       "entryPrice": 208.88,
+      "entryDate": "2026-06-12 SGT",
       "exitPrice": 193.88,
       "exitDate": "2026-06-26 22:34 SGT",
       "realizedPnlUsd": -3300,
@@ -110,6 +119,7 @@
       "direction": "Short hedge",
       "quantity": 83,
       "entryPrice": 718.19,
+      "entryDate": "2026-06-12 SGT",
       "exitPrice": 740.95,
       "exitDate": "2026-06-15 21:47 SGT",
       "realizedPnlUsd": -1895.52,
@@ -120,6 +130,7 @@
       "direction": "Long trim",
       "quantity": 113,
       "entryPrice": 335.6,
+      "entryDate": "2026-06-12 SGT",
       "exitPrice": 365.09,
       "exitDate": "2026-06-25 SGT",
       "realizedPnlUsd": 3332.37,

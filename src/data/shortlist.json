@@ -1,15 +1,15 @@
 {
-  "asOf": "2026-06-27 weekly review / 26 Jun US close",
+  "asOf": "2026-07-01 SGT / 2026-06-30 US close",
   "items": [
-    { "rank": 1, "name": "LLY", "type": "Hold / defensive growth", "score": "7.5/10", "thesisStatus": "Strengthened", "inertia": "Yes", "action": "Hold 25; tighten review to 1165-1175; do not chase/add" },
-    { "rank": 2, "name": "XLE", "type": "Short hedge", "score": "7/10", "thesisStatus": "Intact below 55.50", "inertia": "Yes", "action": "Hold below 55.50; cover 300 near 52.50" },
-    { "rank": 3, "name": "GE", "type": "Hold runner", "score": "7/10", "thesisStatus": "Intact, extended", "inertia": "Yes", "action": "Hold 37 above 365; no re-add" },
-    { "rank": 4, "name": "JPM", "type": "Hold / reduce if weak", "score": "6/10", "thesisStatus": "Yellow-lite", "inertia": "Partial", "action": "Hold only if it reclaims 332; otherwise reduce/exit" },
-    { "rank": 5, "name": "TSLA", "type": "Short hedge", "score": "5.5/10", "thesisStatus": "Fragile near stop", "inertia": "Partial", "action": "Hold short below 380; cover if above 380 or QQQ repairs" },
-    { "rank": 6, "name": "SMH", "type": "Conditional runner", "score": "5/10", "thesisStatus": "Yellow, QQQ-dependent", "inertia": "Partial", "action": "Hold above 605-607; exit if QQQ loses 705" },
-    { "rank": 7, "name": "NVDA", "type": "Closed", "score": "N/A", "thesisStatus": "Failed setup removed", "inertia": "No", "action": "Do not re-enter unless NVDA reclaims 195/200 and QQQ repairs" },
-    { "rank": 8, "name": "CAT/XLI", "type": "Watch only", "score": "7/10", "thesisStatus": "Strong but extended", "inertia": "No", "action": "No chase; GE already expresses industrial strength" },
-    { "rank": 9, "name": "XLV / healthcare", "type": "Watch", "score": "6.5/10", "thesisStatus": "Defensive quality", "inertia": "No", "action": "Prefer pullback entries; LLY already expresses theme" },
-    { "rank": 10, "name": "AMZN/MSFT/GOOGL/AVGO", "type": "Avoid / watch", "score": "4-5/10", "thesisStatus": "Market unconfirmed", "inertia": "No", "action": "No buy while QQQ below 732-733" }
+    { "rank": 1, "name": "SMH", "type": "Hold runner", "score": "8/10", "thesisStatus": "Improving", "inertia": "Yes", "action": "Hold; add only if QQQ >740 or a clean retest holds" },
+    { "rank": 2, "name": "MRVL", "type": "New conditional buy", "score": "8/10", "thesisStatus": "Fresh scan leader", "inertia": "No", "action": "First new-company candidate; buy 285-292 pullback hold or >300 with QQQ >740" },
+    { "rank": 3, "name": "AMD", "type": "New conditional buy", "score": "7/10", "thesisStatus": "AI beta leader", "inertia": "No", "action": "Second new-company candidate; buy only if QQQ >740 and AMD holds 570 or breaks 585-590" },
+    { "rank": 4, "name": "XLE", "type": "Short hedge", "score": "7/10", "thesisStatus": "Intact hedge", "inertia": "Yes", "action": "Hold below 55.50; reduce if QQQ >740 and VIX <18; partial cover near 52.50" },
+    { "rank": 5, "name": "GE", "type": "Hold runner", "score": "7/10", "thesisStatus": "Intact", "inertia": "Yes", "action": "Hold above 365; trim 380-390 if tape weakens; no add" },
+    { "rank": 6, "name": "VRT", "type": "New watch", "score": "7/10", "thesisStatus": "AI infrastructure, extended", "inertia": "No", "action": "Wait for 315-325 pullback hold; no chase after +9% day" },
+    { "rank": 7, "name": "LLY", "type": "Hold runner", "score": "6/10", "thesisStatus": "Yellow-lite", "inertia": "Yes", "action": "Hold 7 only; reclaim 1,200 or tighten; hard review 1,175" },
+    { "rank": 8, "name": "MU", "type": "New watch", "score": "7/10", "thesisStatus": "Memory leader, extended", "inertia": "No", "action": "Watch for 1,100-1,125 pullback hold; no immediate chase" },
+    { "rank": 9, "name": "JPM", "type": "Weak hold / displacement candidate", "score": "5/10", "thesisStatus": "Yellow", "inertia": "Partial", "action": "Reclaim 332/336 or reduce; first funding source for MRVL/AMD; exit below 325" },
+    { "rank": 10, "name": "SNDK", "type": "New watch", "score": "7/10", "thesisStatus": "Memory momentum, very extended", "inertia": "No", "action": "Watch only after consolidation; too extended for immediate execution" }
   ]
 }

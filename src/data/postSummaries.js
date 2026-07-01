@@ -1,13 +1,13 @@
 export const postSummaries = {
   'daily-ic-review-2026-06-30': {
     type: 'Daily IC',
-    regime: 'Neutral / repair attempt',
-    stance: 'Light book; no broad re-risk yet',
-    mainAction: 'Hold current positions and wait for QQQ to confirm above 732-733 before adding risk.',
-    keyHoldingAction: 'Keep LLY and GE as runners, hold XLE as hedge, and manage JPM/SMH with strict reclaim and stop levels.',
-    keyRisk: 'QQQ has repaired into 720-724 but has not confirmed above 732-733.',
-    pnlImpact: 'Active plus realized P&L about +4,784 before fees/slippage.',
-    correctionStatus: 'Original publication',
+    regime: 'Neutral-to-repair, improving',
+    stance: 'Light book; prepare selective re-risk',
+    mainAction: 'Prepare to rotate weak JPM capital into MRVL first and AMD second only if QQQ confirms above 740 or clean pullback entries appear.',
+    keyHoldingAction: 'Hold SMH as best current risk-on exposure, keep XLE as hedge for now, and manage LLY/JPM with strict review levels.',
+    keyRisk: 'QQQ confirmed above 732-733 but remains below the 740 full risk-on gate while 10Y yields remain a valuation headwind.',
+    pnlImpact: 'Active plus realized P&L about +5,662 before fees/slippage.',
+    correctionStatus: 'Updated on 1 Jul 2026 SGT to include the 30 Jun close reassessment and new-company watchlist.',
   },
   'daily-ic-review-2026-06-17': {
     type: 'Daily IC',

@@ -2,8 +2,137 @@
 title: Daily IC Review - 30 Jun 2026
 slug: daily-ic-review-2026-06-30
 publishDate: 30 Jun 2026
-description: KumoTrade daily investment committee update covering the neutral repair attempt, LLY and GE runners, JPM and SMH risk controls, XLE hedge management, and conditional MSFT/AVGO/AMZN/NVDA watchlist triggers.
+description: KumoTrade daily investment committee update covering the 30 Jun close reassessment, selective re-risk posture, active holdings, XLE hedge management, and MRVL/AMD-led watchlist.
 ---
+
+Correction status: Updated on 1 Jul 2026 SGT to include the 30 Jun US close reassessment and the new-company watchlist scan. The original publication remains below for audit trail context.
+
+## Updated IC Reassessment - 30 Jun 2026 US Close
+
+Market reference: 2026-06-30 US close.
+Portfolio base: USD 1,000,000.
+Purpose: daily review of active holdings, prior recommendations, fresh scan, ranked shortlist, watchlist, and execution plan.
+
+### Executive Decision
+
+The stance changed from "hold only, no broad buys" to controlled selective re-risk.
+
+QQQ closed above the 732-733 confirmation gate, and VIX moved below the 18 no-add line. That confirms repair, but QQQ remains below the 740 full risk-on gate and 10Y yields remain a valuation headwind. The right posture is not to chase, but to prepare a defined re-risk plan.
+
+Action:
+
+- Hold the current book.
+- Keep XLE as hedge for now, but reduce it if QQQ confirms above 740 and VIX stays below 18.
+- Use JPM as the first funding source if new long triggers confirm.
+- Prioritize MRVL first and AMD second for new-company re-risk.
+- Keep VRT, MU, and SNDK on watch only until cleaner entries appear.
+
+### Market Regime And Exposure
+
+| Indicator | Level Used | Read |
+| --- | ---: | --- |
+| SPY | ~746.77 | Repair intact |
+| QQQ | ~736.40 | Above 732-733 repair gate; below 740 risk-on gate |
+| VIX | ~16.45 | Below 18 no-add line |
+| US 10Y / TNX | ~4.40-4.44% | Still a valuation headwind |
+| XLE | ~53.11 | Hedge still intact below 55.50 |
+
+Regime classification: neutral-to-repair, improving.
+
+Approximate portfolio state after the 30 Jun close:
+
+| Metric | Approx. State | Instruction |
+| --- | ---: | --- |
+| Gross active exposure | ~9.21% | Keep light, but prepare selective adds |
+| Net exposure | ~2.70% net long | Acceptable for repair regime |
+| Active unrealized P&L | ~+6,849 | Protect gains |
+| Active plus realized P&L | ~+5,662 | Do not turn repair into chase |
+| Add-risk trigger | QQQ >740 | First controlled re-risk |
+
+### Current Holdings Reassessment
+
+| Ticker | Position | Score | Status | Action |
+| --- | --- | ---: | --- | --- |
+| SMH | Long runner, 37 shares | 8/10 | Improving | Hold; add only if QQQ >740 or SMH retests 640-645 and holds |
+| XLE | Short hedge, 613 shares | 7/10 | Intact hedge | Hold below 55.50; reduce if QQQ >740 and VIX <18; partial cover near 52.50 |
+| GE | Long runner, 37 shares | 7/10 | Intact | Hold above 365; trim 380-390 if tape weakens; no add |
+| LLY | Long runner, 7 shares | 6/10 | Yellow-lite | Hold 7 only; reclaim 1,200 or tighten; hard review 1,175 |
+| JPM | Long runner, 40 shares | 5/10 | Yellow | Reclaim 332/336 or reduce; first funding source for MRVL/AMD; exit below 325 |
+
+### Fresh New-Company Watchlist
+
+This is the watchlist that was missing from the original report body.
+
+| Rank | Ticker | Type | Daily Score | Trigger | Stop | Target | Action |
+| ---: | --- | --- | ---: | --- | --- | --- | --- |
+| 1 | MRVL | New conditional buy | 8/10 | 285-292 pullback hold, or >300 breakout only with QQQ >740 | 270 | 330-350 | First new-company candidate; starter only |
+| 2 | AMD | New conditional buy | 7/10 | QQQ >740 and AMD holds 570 or breaks 585-590 | 540 | 640-680 | Second new long after MRVL |
+| 3 | VRT | New watch | 7/10 | 315-325 pullback hold | 300 | 360-380 | Good AI infrastructure name, but no chase after +9% day |
+| 4 | MU | New watch | 7/10 | 1,100-1,125 pullback hold | 1,050 | 1,250 | Memory leader; wait for consolidation |
+| 5 | SNDK | New watch | 7/10 | Only after consolidation | Setup dependent | Setup dependent | Momentum leader, too extended for immediate execution |
+
+### Updated Consolidated Shortlist
+
+| Rank | Name | Type | Daily Score | Thesis Status | Inertia | Action |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | SMH | Hold runner | 8/10 | Improving | Yes | Hold; add only if QQQ >740 or a clean retest holds |
+| 2 | MRVL | New conditional buy | 8/10 | Fresh scan leader | No | First new-company candidate; buy 285-292 pullback hold or >300 with QQQ >740 |
+| 3 | AMD | New conditional buy | 7/10 | AI beta leader | No | Buy only if QQQ >740 and AMD holds 570 or breaks 585-590 |
+| 4 | XLE | Short hedge | 7/10 | Intact hedge | Yes | Hold below 55.50; reduce if QQQ >740 and VIX <18; partial cover near 52.50 |
+| 5 | GE | Hold runner | 7/10 | Intact | Yes | Hold above 365; trim 380-390 if tape weakens; no add |
+| 6 | VRT | New watch | 7/10 | AI infrastructure, extended | No | Wait for 315-325 pullback hold; no chase |
+| 7 | LLY | Hold runner | 6/10 | Yellow-lite | Yes | Hold 7 only; reclaim 1,200 or tighten; hard review 1,175 |
+| 8 | MU | New watch | 7/10 | Memory leader, extended | No | Watch for 1,100-1,125 pullback hold |
+| 9 | JPM | Weak hold / displacement candidate | 5/10 | Yellow | Partial | Reclaim 332/336 or reduce; first funding source for MRVL/AMD; exit below 325 |
+| 10 | SNDK | New watch | 7/10 | Memory momentum, very extended | No | Watch only after consolidation |
+
+Copy-paste shortlist:
+
+```text
+--- SHORTLIST AS AT 2026-07-01 SGT / 2026-06-30 US CLOSE ---
+RANK | NAME | TYPE | DAILY SCORE | THESIS STATUS | INERTIA | ACTION
+1 | SMH | Hold runner | 8/10 | Improving | Yes | Hold; add only if QQQ >740 or clean retest holds
+2 | MRVL | New conditional buy | 8/10 | Fresh scan leader | No | Buy 285-292 pullback hold or >300 with QQQ >740
+3 | AMD | New conditional buy | 7/10 | AI beta leader | No | Buy only if QQQ >740 and AMD holds 570 or breaks 585-590
+4 | XLE | Short hedge | 7/10 | Intact hedge | Yes | Hold below 55.50; reduce if QQQ >740 and VIX <18
+5 | GE | Hold runner | 7/10 | Intact | Yes | Hold above 365; trim 380-390 if tape weakens
+6 | VRT | New watch | 7/10 | AI infrastructure, extended | No | Wait for 315-325 pullback hold
+7 | LLY | Hold runner | 6/10 | Yellow-lite | Yes | Hold 7 only; reclaim 1,200 or tighten; hard review 1,175
+8 | MU | New watch | 7/10 | Memory leader, extended | No | Watch for 1,100-1,125 pullback hold
+9 | JPM | Weak hold / displacement candidate | 5/10 | Yellow | Partial | Reclaim 332/336 or reduce; first funding source for MRVL/AMD
+10 | SNDK | New watch | 7/10 | Memory momentum, very extended | No | Watch only after consolidation
+--- END SHORTLIST ---
+```
+
+### Updated Execution Plan
+
+| Market Condition | Action |
+| --- | --- |
+| QQQ <733 | No new buys; hold or reduce only |
+| QQQ 733-740 | Keep current book; prepare MRVL/AMD but do not chase |
+| QQQ >740 and VIX <18 | Buy MRVL first, then AMD, with starter sizing |
+| MRVL >300 and holds with QQQ >740 | Starter only, not full size |
+| AMD >585-590 with QQQ >740 | Starter after MRVL |
+| VRT pulls back to 315-325 and holds | Consider only after MRVL/AMD priority |
+| JPM below 325 | Reduce or exit |
+| XLE near 52.50 | Partial cover |
+
+### Updated Risk Controls
+
+- QQQ <733: cancel new buys.
+- QQQ <720: reduce SMH and pause all re-risk.
+- VIX >18: pause new adds.
+- VIX >21: reduce risk.
+- 10Y >4.50%: reduce AI/semi chase tolerance.
+- MRVL below 270 after entry: exit.
+- AMD below 540 after entry: exit.
+- JPM below 325: exit or reduce.
+
+Final updated verdict: the book should remain light but prepared to rotate weak JPM capital into MRVL first and AMD second if QQQ confirms above 740 or if those names give clean pullback entries.
+
+---
+
+## Original Publication
 
 Market reference: 2026-06-29 US close / late-session broker snapshot.
 Portfolio base: USD 1,000,000.
