@@ -268,10 +268,17 @@ const hasHiddenClosedRows = recentlyClosed.length > closedDisplayLimit;
 
   .holdings-table th,
   .holdings-table td {
+    font-size: 0.95rem;
+    line-height: 1.45;
     overflow-wrap: anywhere;
     padding-left: 0.65em;
     padding-right: 0.65em;
     vertical-align: top;
+  }
+
+  .holdings-table strong {
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .active-table th:nth-child(-n + 5),
