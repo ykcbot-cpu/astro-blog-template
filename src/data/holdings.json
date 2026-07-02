@@ -1,27 +1,41 @@
 {
-  "asOf": "2026-07-01 SGT / 2026-06-30 US close",
-  "regime": "Neutral-to-repair, improving",
+  "asOf": "2026-07-02 18:11 SGT / 2026-07-01 US close",
+  "regime": "Neutral / failed confirmation / defensive repair",
   "exposure": {
-    "longNotionalUsd": 59585,
-    "shortNotionalUsd": 32556,
-    "grossExposurePct": 9.21,
+    "longNotionalUsd": 59600,
+    "shortNotionalUsd": 32372,
+    "grossExposurePct": 9.2,
     "netExposurePct": 2.7,
     "recommendedNetExposurePct": "0-15"
   },
   "positions": [
+    {
+      "ticker": "XLE",
+      "name": "Energy Select Sector SPDR Fund",
+      "direction": "Short hedge",
+      "quantity": 613,
+      "entryPrice": 57.08,
+      "lastPriceUsed": 52.81,
+      "stop": 55.5,
+      "target": 52.5,
+      "score": "8/10",
+      "status": "Active hedge",
+      "thesis": "Intact hedge; working near partial-cover zone",
+      "action": "Hold hedge; partial cover near 52.50; review above 55.25-55.50."
+    },
     {
       "ticker": "GE",
       "name": "GE Aerospace",
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 335.62,
-      "lastPriceUsed": 373.73,
+      "lastPriceUsed": 374.95,
       "stop": 365,
       "target": "380-390",
       "score": "7/10",
       "status": "Runner",
       "thesis": "Intact",
-      "action": "Hold above 365; trim 380-390 if tape weakens; no add."
+      "action": "Hold above 365; no add; trim near 380-390 if tape weakens."
     },
     {
       "ticker": "JPM",
@@ -29,13 +43,13 @@
       "direction": "Long",
       "quantity": 40,
       "entryPrice": 313.43,
-      "lastPriceUsed": 327.33,
+      "lastPriceUsed": 333.98,
       "stop": 325,
       "target": "336-340",
-      "score": "5/10",
-      "status": "Weak hold",
-      "thesis": "Yellow; failed 332/336 reclaim",
-      "action": "Reclaim 332/336 or reduce; first funding source for MRVL/AMD; exit below 325."
+      "score": "6/10",
+      "status": "Reclaim watch",
+      "thesis": "Yellow-lite; needs 336 reclaim",
+      "action": "Hold above 325; upgrade only above 336; no add."
     },
     {
       "ticker": "LLY",
@@ -43,13 +57,13 @@
       "direction": "Long",
       "quantity": 7,
       "entryPrice": 1115.12,
-      "lastPriceUsed": 1199.43,
+      "lastPriceUsed": 1191.69,
       "stop": 1175,
       "target": "Runner",
       "score": "6/10",
       "status": "Runner",
-      "thesis": "Yellow-lite; closed just below 1,200 review line",
-      "action": "Hold 7 only; reclaim 1,200 or tighten; hard review 1,175."
+      "thesis": "Yellow; pullback from prior strength",
+      "action": "Hold 7 only; review near 1,200; hard review below 1,175."
     },
     {
       "ticker": "SMH",
@@ -57,27 +71,13 @@
       "direction": "Long",
       "quantity": 37,
       "entryPrice": 605.64,
-      "lastPriceUsed": 655.89,
+      "lastPriceUsed": 620.45,
       "stop": 605,
-      "target": 675,
-      "score": "8/10",
-      "status": "Runner",
-      "thesis": "Improving but market-dependent",
-      "action": "Hold; add only if QQQ >740 or SMH retests 640-645 and holds."
-    },
-    {
-      "ticker": "XLE",
-      "name": "Energy Select Sector SPDR Fund",
-      "direction": "Short hedge",
-      "quantity": 613,
-      "entryPrice": 57.08,
-      "lastPriceUsed": 53.11,
-      "stop": 55.5,
-      "target": 52.5,
-      "score": "7/10",
-      "status": "Active hedge",
-      "thesis": "Intact hedge below 55.50",
-      "action": "Hold below 55.50; reduce if QQQ >740 and VIX <18; partial cover near 52.50."
+      "target": "Conditional",
+      "score": "4/10",
+      "status": "Conditional runner",
+      "thesis": "Orange-lite; market-dependent after QQQ failure",
+      "action": "Hold only if SMH >605-607 and QQQ >720; exit if either breaks; no add."
     }
   ],
   "recentlyClosed": [
@@ -115,17 +115,6 @@
       "reason": "Failed setup removed after NVDA broke the 195/197 danger zone."
     },
     {
-      "ticker": "QQQ",
-      "direction": "Short hedge",
-      "quantity": 83,
-      "entryPrice": 718.19,
-      "entryDate": "2026-06-12 SGT",
-      "exitPrice": 740.95,
-      "exitDate": "2026-06-15 21:47 SGT",
-      "realizedPnlUsd": -1895.52,
-      "reason": "Stop breach / hedge thesis invalidated by tech strength."
-    },
-    {
       "ticker": "GE",
       "direction": "Long trim",
       "quantity": 113,
@@ -135,6 +124,17 @@
       "exitDate": "2026-06-25 SGT",
       "realizedPnlUsd": 3332.37,
       "reason": "75% take-profit rule after target hit."
+    },
+    {
+      "ticker": "QQQ",
+      "direction": "Short hedge",
+      "quantity": 83,
+      "entryPrice": 718.19,
+      "entryDate": "2026-06-12 SGT",
+      "exitPrice": 740.95,
+      "exitDate": "2026-06-15 21:47 SGT",
+      "realizedPnlUsd": -1895.52,
+      "reason": "Stop breach / hedge thesis invalidated by tech strength."
     }
   ]
 }
