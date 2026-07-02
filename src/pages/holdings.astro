@@ -12,6 +12,7 @@ const parseExitDate = (value) => {
   const parsed = Date.parse(normalized);
   return Number.isNaN(parsed) ? 0 : parsed;
 };
+const formatDateOnly = (value) => value.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? value;
 const recentlyClosed = [...holdings.recentlyClosed].sort(
   (left, right) => parseExitDate(right.exitDate) - parseExitDate(left.exitDate),
 );
@@ -115,8 +116,8 @@ const hasHiddenClosedRows = recentlyClosed.length > closedDisplayLimit;
         <tbody>
           {recentlyClosed.map((position, index) => (
             <tr class:list={{ 'is-hidden': index >= closedDisplayLimit }}>
-              <td>{position.exitDate}</td>
-              <td>{position.entryDate}</td>
+              <td>{formatDateOnly(position.exitDate)}</td>
+              <td>{formatDateOnly(position.entryDate)}</td>
               <td><strong>{position.ticker}</strong></td>
               <td>{position.direction}</td>
               <td>{position.quantity}</td>
@@ -232,14 +233,66 @@ const hasHiddenClosedRows = recentlyClosed.length > closedDisplayLimit;
     width: 100%;
   }
 
+  .active-table {
+    min-width: 1040px;
+  }
+
   .closed-table {
     min-width: 1120px;
   }
 
+  .active-table .col-ticker {
+    width: 5rem;
+  }
+
+  .active-table .col-direction {
+    width: 7.5rem;
+  }
+
+  .active-table .col-qty {
+    width: 4.5rem;
+  }
+
+  .active-table .col-price,
+  .active-table .col-score {
+    width: 5.5rem;
+  }
+
+  .active-table .col-note {
+    width: 13rem;
+  }
+
+  .active-table .col-action {
+    width: 32rem;
+  }
+
   .holdings-table th,
   .holdings-table td {
+    font-size: 0.95rem;
+    line-height: 1.45;
     overflow-wrap: anywhere;
+    padding-left: 0.65em;
+    padding-right: 0.65em;
     vertical-align: top;
+  }
+
+  .holdings-table th {
+    font-weight: 700;
+  }
+
+  .holdings-table td {
+    font-weight: 400;
+  }
+
+  .holdings-table strong {
+    font-size: inherit;
+    font-weight: 700;
+    line-height: inherit;
+  }
+
+  .active-table th:nth-child(-n + 5),
+  .active-table td:nth-child(-n + 5) {
+    white-space: nowrap;
   }
 
   .col-ticker {

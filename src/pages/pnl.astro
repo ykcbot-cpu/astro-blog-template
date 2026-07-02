@@ -3,37 +3,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import holdings from '../data/holdings.json';
 
 const title = 'P&L';
-const description = 'KumoTrade portfolio performance and P&L summary.';
+const description = 'KumoTrade portfolio performance and P&L source-of-truth status.';
 const permalink = `${Astro.site.href}pnl`;
+const activePositionCount = holdings.positions.length;
+const closedRecordCount = holdings.recentlyClosed.length;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="pnl">
   <div class="container pnl-page">
     <header class="page-header">
       <p class="eyebrow">As of {holdings.asOf}</p>
-      <h1>P&L</h1>
+      <h1>P&L / Performance</h1>
       <p class="summary">
-        Placeholder page for the upcoming P&L section. The Home dashboard currently shows portfolio
-        performance since IC start until the US investment skill produces a formal YTD performance field.
+        P&L calculation is intentionally reserved for the US investment process. This page will
+        publish formal performance only after that source-of-truth output is available.
       </p>
     </header>
 
-    <section class="metrics" aria-label="Performance summary">
+    <section class="metrics" aria-label="P&L source status">
       <div>
-        <span>Portfolio performance</span>
-        <strong>+0.4%</strong>
-        <p>Since IC start; temporary label.</p>
+        <span>Source of truth</span>
+        <strong>US investment</strong>
+        <p>Frontend does not calculate total, realized, unrealized, YTD, MTD, or return figures.</p>
       </div>
       <div>
-        <span>Gross exposure</span>
-        <strong>{holdings.exposure.grossExposurePct}%</strong>
-        <p>Current book size.</p>
+        <span>Status</span>
+        <strong>Pending</strong>
+        <p>Awaiting formal P&L fields from the US investment workflow or broker-confirmed record.</p>
       </div>
       <div>
-        <span>Net exposure</span>
-        <strong>{holdings.exposure.netExposurePct}%</strong>
-        <p>Current directional exposure.</p>
+        <span>Available records</span>
+        <strong>{activePositionCount} active / {closedRecordCount} closed</strong>
+        <p>Record counts come from `holdings.json`; they are not performance calculations.</p>
       </div>
+    </section>
+
+    <section class="source-panel" aria-label="P&L calculation policy">
+      <h2>Calculation Policy</h2>
+      <ul>
+        <li>Calculated here: none.</li>
+        <li>Displayed here: only explicit source fields and record counts.</li>
+        <li>Not calculated here: active unrealized P&L, realized P&L totals, total P&L, returns, fees, slippage, FX, tax, dividends, borrow, and financing.</li>
+        <li>Required source: US investment output or broker-confirmed performance export.</li>
+      </ul>
+    </section>
+
+    <section class="source-panel" aria-label="Available input data">
+      <h2>Available Input Data</h2>
+      <p>
+        The current holdings file contains position-level inputs such as quantity, entry price,
+        last price used, exit price, and realized P&L fields. Those inputs are useful for audit,
+        but this page will not transform them into portfolio performance.
+      </p>
     </section>
   </div>
 </BaseLayout>
@@ -50,7 +71,8 @@ const permalink = `${Astro.site.href}pnl`;
   .eyebrow,
   .summary,
   .metrics span,
-  .metrics p {
+  .metrics p,
+  .source-panel {
     color: var(--text-secondary);
     font-family: var(--font-family-sans);
     font-weight: 700;
@@ -73,11 +95,15 @@ const permalink = `${Astro.site.href}pnl`;
     margin: 2rem 0;
   }
 
-  .metrics div {
+  .metrics div,
+  .source-panel {
     border: 1px solid rgba(84, 142, 155, 0.35);
     border-radius: 8px;
-    min-height: 160px;
     padding: 1rem;
+  }
+
+  .metrics div {
+    min-height: 160px;
   }
 
   .metrics span {
@@ -90,13 +116,33 @@ const permalink = `${Astro.site.href}pnl`;
     display: block;
     font-family: var(--font-family-sans);
     font-size: 2rem;
+    line-height: 1.15;
     margin-top: 0.4rem;
   }
 
-  .metrics p {
+  .metrics p,
+  .source-panel p,
+  .source-panel li {
     font-size: 1rem;
     line-height: 1.45;
+  }
+
+  .metrics p {
     margin: 1rem 0 0;
+  }
+
+  .source-panel {
+    margin-top: 1.5rem;
+  }
+
+  .source-panel h2 {
+    color: var(--text-primary);
+    margin-bottom: 0.7rem;
+  }
+
+  .source-panel ul {
+    margin: 0;
+    padding-left: 1.2rem;
   }
 
   @media (max-width: 760px) {

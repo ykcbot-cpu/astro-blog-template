@@ -1,4 +1,14 @@
 export const postSummaries = {
+  'daily-ic-review-2026-07-02': {
+    type: 'Daily IC',
+    regime: 'Neutral / failed confirmation / defensive repair',
+    stance: 'Stay defensive; no fresh broad buys',
+    mainAction: 'Hold runners, keep XLE hedge, and wait for QQQ to reclaim 733 before considering AMZN, CRM, or DDOG.',
+    keyHoldingAction: 'Keep XLE as the top-ranked active position, hold GE/JPM/LLY runners, and exit SMH if SMH breaks 605-607 or QQQ loses 720.',
+    keyRisk: 'QQQ closed below the 732-733 confirmation gate at 725.17, so the prior repair failed to confirm despite VIX improving.',
+    pnlImpact: 'Formal P&L remains owned by the US investment process; active position P&L is approximate only in the IC report.',
+    correctionStatus: 'Original publication',
+  },
   'daily-ic-review-2026-06-30': {
     type: 'Daily IC',
     regime: 'Neutral-to-repair, improving',
