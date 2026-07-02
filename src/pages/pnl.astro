@@ -5,35 +5,167 @@ import holdings from '../data/holdings.json';
 const title = 'P&L';
 const description = 'KumoTrade portfolio performance and P&L summary.';
 const permalink = `${Astro.site.href}pnl`;
+const directionMultiplier = (direction) => direction.toLowerCase().includes('short') ? -1 : 1;
+const formatCurrency = (value) => {
+  const sign = value > 0 ? '+' : value < 0 ? '-' : '';
+  const absolute = Math.abs(value);
+
+  return `${sign}$${absolute.toLocaleString('en-US', {
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  })}`;
+};
+const formatPrice = (value) => Number(value).toLocaleString('en-US', {
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+});
+const parseExitDate = (value) => {
+  const [datePart, timePart = '00:00'] = value.replace(' SGT', '').split(' ');
+  const normalized = `${datePart}T${timePart}:00+08:00`;
+  const parsed = Date.parse(normalized);
+
+  return Number.isNaN(parsed) ? 0 : parsed;
+};
+const formatDateOnly = (value) => value.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? value;
+const activePerformance = holdings.positions.map((position) => {
+  const pnlUsd = directionMultiplier(position.direction)
+    * (position.lastPriceUsed - position.entryPrice)
+    * position.quantity;
+
+  return {
+    ...position,
+    pnlUsd,
+  };
+});
+const activeUnrealizedPnl = activePerformance.reduce((total, position) => total + position.pnlUsd, 0);
+const realizedPnl = holdings.recentlyClosed.reduce(
+  (total, position) => total + position.realizedPnlUsd,
+  0,
+);
+const realizedPerformance = [...holdings.recentlyClosed].sort(
+  (left, right) => parseExitDate(right.exitDate) - parseExitDate(left.exitDate),
+);
+const totalKnownPnl = activeUnrealizedPnl + realizedPnl;
 ---
 
 <BaseLayout title={title} description={description} permalink={permalink} current="pnl">
   <div class="container pnl-page">
     <header class="page-header">
       <p class="eyebrow">As of {holdings.asOf}</p>
-      <h1>P&L</h1>
+      <h1>P&L / Performance</h1>
       <p class="summary">
-        Placeholder page for the upcoming P&L section. The Home dashboard currently shows portfolio
-        performance since IC start until the US investment skill produces a formal YTD performance field.
+        Known active plus realized P&L from the current holdings file. Values are before fees,
+        slippage, tax, FX, dividends, borrow, and financing.
       </p>
     </header>
 
     <section class="metrics" aria-label="Performance summary">
       <div>
-        <span>Portfolio performance</span>
-        <strong>+0.4%</strong>
-        <p>Since IC start; temporary label.</p>
+        <span>Total known P&L</span>
+        <strong class:list={{ positive: totalKnownPnl > 0, negative: totalKnownPnl < 0 }}>
+          {formatCurrency(totalKnownPnl)}
+        </strong>
+        <p>Active unrealized plus realized closed/reduced positions.</p>
       </div>
       <div>
-        <span>Gross exposure</span>
-        <strong>{holdings.exposure.grossExposurePct}%</strong>
-        <p>Current book size.</p>
+        <span>Active unrealized</span>
+        <strong class:list={{ positive: activeUnrealizedPnl > 0, negative: activeUnrealizedPnl < 0 }}>
+          {formatCurrency(activeUnrealizedPnl)}
+        </strong>
+        <p>Open positions marked using last price in holdings data.</p>
       </div>
       <div>
-        <span>Net exposure</span>
-        <strong>{holdings.exposure.netExposurePct}%</strong>
-        <p>Current directional exposure.</p>
+        <span>Realized P&L</span>
+        <strong class:list={{ positive: realizedPnl > 0, negative: realizedPnl < 0 }}>
+          {formatCurrency(realizedPnl)}
+        </strong>
+        <p>Closed and reduced positions currently recorded.</p>
       </div>
+    </section>
+
+    <section class="table-wrap" aria-label="Active unrealized P&L">
+      <h2>Active Unrealized P&L</h2>
+      <table class="pnl-table active-pnl-table">
+        <colgroup>
+          <col class="col-ticker" />
+          <col class="col-direction" />
+          <col class="col-qty" />
+          <col class="col-price" />
+          <col class="col-price" />
+          <col class="col-pnl" />
+          <col class="col-status" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Direction</th>
+            <th>Qty</th>
+            <th>Entry</th>
+            <th>Last</th>
+            <th>Unrealized P&L</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activePerformance.map((position) => (
+            <tr>
+              <td><strong>{position.ticker}</strong></td>
+              <td>{position.direction}</td>
+              <td>{position.quantity}</td>
+              <td>{formatPrice(position.entryPrice)}</td>
+              <td>{formatPrice(position.lastPriceUsed)}</td>
+              <td class:list={{ positive: position.pnlUsd > 0, negative: position.pnlUsd < 0 }}>
+                {formatCurrency(position.pnlUsd)}
+              </td>
+              <td>{position.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-wrap" aria-label="Realized P&L">
+      <h2>Realized P&L</h2>
+      <table class="pnl-table realized-pnl-table">
+        <colgroup>
+          <col class="col-date" />
+          <col class="col-ticker" />
+          <col class="col-direction" />
+          <col class="col-qty" />
+          <col class="col-price" />
+          <col class="col-price" />
+          <col class="col-pnl" />
+          <col class="col-reason" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Exit Date</th>
+            <th>Ticker</th>
+            <th>Direction</th>
+            <th>Qty</th>
+            <th>Entry</th>
+            <th>Exit</th>
+            <th>Realized P&L</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          {realizedPerformance.map((position) => (
+            <tr>
+              <td>{formatDateOnly(position.exitDate)}</td>
+              <td><strong>{position.ticker}</strong></td>
+              <td>{position.direction}</td>
+              <td>{position.quantity}</td>
+              <td>{formatPrice(position.entryPrice)}</td>
+              <td>{formatPrice(position.exitPrice)}</td>
+              <td class:list={{ positive: position.realizedPnlUsd > 0, negative: position.realizedPnlUsd < 0 }}>
+                {formatCurrency(position.realizedPnlUsd)}
+              </td>
+              <td>{position.reason}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   </div>
 </BaseLayout>
@@ -97,6 +229,74 @@ const permalink = `${Astro.site.href}pnl`;
     font-size: 1rem;
     line-height: 1.45;
     margin: 1rem 0 0;
+  }
+
+  .positive {
+    color: #1f7a4d;
+  }
+
+  .negative {
+    color: #b23b3b;
+  }
+
+  .table-wrap {
+    margin-top: 2.5rem;
+    overflow-x: auto;
+  }
+
+  .pnl-table {
+    min-width: 980px;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .realized-pnl-table {
+    min-width: 1120px;
+  }
+
+  .pnl-table th,
+  .pnl-table td {
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+    padding-left: 0.65em;
+    padding-right: 0.65em;
+    vertical-align: top;
+  }
+
+  .pnl-table th,
+  .pnl-table strong {
+    font-weight: 700;
+  }
+
+  .col-ticker {
+    width: 5rem;
+  }
+
+  .col-direction {
+    width: 8.5rem;
+  }
+
+  .col-qty {
+    width: 4.5rem;
+  }
+
+  .col-price,
+  .col-pnl {
+    width: 7.5rem;
+  }
+
+  .col-date {
+    width: 7.5rem;
+  }
+
+  .col-status {
+    width: 12rem;
+  }
+
+  .col-reason {
+    width: 26rem;
   }
 
   @media (max-width: 760px) {
